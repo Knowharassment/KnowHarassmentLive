@@ -890,15 +890,15 @@ th {
           box-sizing: border-box;
 }
 html {
-  font-size: 10px;
+  font-size: 1em;
 
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 1 em;
   line-height: 1.42857143;
-  color: #333;
+  color: rgb(0,0,0);
   background-color: #fff;
 }
 input,
