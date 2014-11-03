@@ -10,10 +10,15 @@ html {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
-/*BEGIN BODY STYLING*/
+  /*BEGIN BODY STYLING*/
 body {
     margin: auto 0 auto 0;
     min-width: 30em;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 90%;
+    margin: 0 auto 0 auto;
 
 }
 article,
@@ -902,7 +907,10 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #fff;
+  background-image: url(images/gradientbackground2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
     width: 90%;
     margin: 0 auto 0 auto;
 }
@@ -3969,6 +3977,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   .navbar-nav > li {
     float: left;
+    text-align: center;
+      font-size: .9em;
   }
   .navbar-nav > li > a {
     padding-top: 15px;
@@ -4583,6 +4593,7 @@ a.list-group-item.active > .badge,
   font-weight: 200;
   text-align: center;
   padding-left:25px;
+    text-align: left;
 }
 .jumbotron > hr {
   border-top-color: #d5d5d5;

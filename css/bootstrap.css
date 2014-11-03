@@ -12,6 +12,11 @@ html {
 }
 body {
   margin: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 90%;
+    margin: 0 auto 0 auto;
 }
 article,
 aside,
@@ -899,7 +904,11 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #fff;
+  background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 90%;
+    margin: 0 auto 0 auto;
 }
 input,
 button,
