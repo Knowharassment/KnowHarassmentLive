@@ -11,7 +11,7 @@ html {
       -ms-text-size-adjust: 100%;
 }
 body {
-  margin: 0;
+    margin: auto 0 auto 0;    
 }
 article,
 aside,
@@ -900,6 +900,8 @@ body {
   line-height: 1.42857143;
   color: #333;
   background-color: #fff;
+    width: 90%;
+    margin: 0 auto 0 auto;
 }
 input,
 button,
@@ -3769,7 +3771,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar {
   position: relative;
   min-height: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
   border: 1px solid transparent;
 }
 @media (min-width: 768px) {
@@ -3832,7 +3836,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .container > .navbar-collapse,
 .container-fluid > .navbar-collapse {
   margin-right: -15px;
-  margin-left: -15px;
+  margin-left: 1em;
 }
 @media (min-width: 768px) {
   .container > .navbar-header,
@@ -3854,7 +3858,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-fixed-top,
 .navbar-fixed-bottom {
-  position: fixed;
+  position: relative;
+    margin: 1em auto 1em auto;
   right: 0;
   left: 0;
   z-index: 1030;
@@ -4544,6 +4549,8 @@ a.list-group-item.active > .badge,
 .nav-pills > li > a > .badge {
   margin-left: 3px;
 }
+
+/* START JUMBOTRON CONTAINER */
 .jumbotron {
   padding: 30px;
   margin-bottom: 30px;
@@ -4551,11 +4558,21 @@ a.list-group-item.active > .badge,
   background-color: rgb(42,62,64)
   ;
 }
+.jumbotron img{
+    display:block; 
+    position: relative;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    
+    }
+}
 .jumbotron h1,
 .jumbotron .h1 {
-  color: inherit;
-
-  
+    display: block;
+    position: relative;
+    color: inherit;
+    text-align:center;
 }
 .jumbotron p {
   margin-bottom: 15px;
@@ -4586,6 +4603,7 @@ a.list-group-item.active > .badge,
   .jumbotron .h1 {
     font-size: 63px;
   }
+    /* END JUMBOTRON CONTAINER */
 }
 .thumbnail {
   display: block;

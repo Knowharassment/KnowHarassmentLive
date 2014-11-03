@@ -4566,7 +4566,7 @@ a.list-group-item.active > .badge,
   border-radius: 6px;
 }
 .jumbotron .container {
-  max-width: 100%;
+  max-width: 90%;
 }
 @media screen and (min-width: 768px) {
   .jumbotron {
