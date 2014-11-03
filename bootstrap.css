@@ -4553,7 +4553,7 @@ a.list-group-item.active > .badge,
 /* START JUMBOTRON CONTAINER */
 .jumbotron {
   padding: 30px;
-  margin-bottom: 30px;
+  margin: 0 auto 4em auto;
   color: rgb(201,201,201) ;
   background-color: rgb(42,62,64)
   ;
