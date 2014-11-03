@@ -4565,9 +4565,11 @@ a.list-group-item.active > .badge,
   color: inherit;
 }
 .jumbotron p {
+    position: relative;
   margin-bottom: 15px;
   font-size: 21px;
   font-weight: 200;
+    text-align: justify;
 }
 .jumbotron > hr {
   border-top-color: #d5d5d5;

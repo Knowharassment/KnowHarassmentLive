@@ -908,7 +908,8 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-image: url(images/gradientbackground2.jpg);
+  /*background-image: url(images/gradientbackground2.jpg);*/
+    background-color:rgb(85,125,128);
     background-repeat: repeat-y;
     background-position:top;
     background-size: 100% 75em;;
@@ -923,13 +924,13 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #fff;
+  color: rgb(225,166,106);
   text-decoration: none;
 }
 a:hover,
 a:focus {
   color: #2a6496;
-  text-decoration: underline;
+  text-decoration:;
 }
 a:focus {
   outline: thin dotted;
@@ -1114,7 +1115,9 @@ h6,
 }
 p {
   margin: 0 0 10px;
-    color: #FFF:
+    color: #FFF;
+    font-family:' serif, rosario';
+    font-size: 1.1em;
 }
 .lead {
   margin-bottom: 20px;
@@ -3899,12 +3902,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-width: 1px 0 0;
 }
 .navbar-brand {
+    position: relative;
   float: left;
   height: 50px;
   padding: 15px  15px;
     padding-left: .1em;
   font-size: 18px;
   line-height: 20px;
+    margin-left:;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
