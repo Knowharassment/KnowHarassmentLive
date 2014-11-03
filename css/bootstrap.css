@@ -194,7 +194,7 @@ th {
 }
 @media print {
   * {
-    color: #FFF; !important;
+    color: #fff; !important;
     text-shadow: none !important;
     background: transparent !important;
     -webkit-box-shadow: none !important;
@@ -903,7 +903,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: "white";
+  color: #fff;
   background-repeat: repeat;
     background-position: center;
     background-size: 100%;
@@ -919,7 +919,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #fff;
+  color: rgb(225,166,106);
   text-decoration: none;
 }
 a:hover,
@@ -3139,13 +3139,13 @@ tbody.collapse.in {
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 1000;
+  z-index: 1100;
   display: none;
   float: left;
   min-width: 160px;
   padding: 5px 0;
   margin: 2px 0 0;
-  font-size: 14px;
+  font-size: 1em;
   text-align: left;
   list-style: none;
   background-color: #fff;
@@ -4565,9 +4565,11 @@ a.list-group-item.active > .badge,
   color: inherit;
 }
 .jumbotron p {
+    position: relative;
   margin-bottom: 15px;
   font-size: 21px;
   font-weight: 200;
+    text-align: justify;
 }
 .jumbotron > hr {
   border-top-color: #d5d5d5;
