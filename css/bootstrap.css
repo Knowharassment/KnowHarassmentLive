@@ -65,7 +65,7 @@ dfn {
   font-style: italic;
 }
 h1 {
-  margin: .67em 0;
+  margin: .6em 0;
   font-size: 2em;
 }
 mark {
@@ -194,7 +194,7 @@ th {
 }
 @media print {
   * {
-    color: #000 !important;
+    color: #FFF; !important;
     text-shadow: none !important;
     background: transparent !important;
     -webkit-box-shadow: none !important;
@@ -903,7 +903,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #333;
+  color: "white";
   background-repeat: repeat;
     background-position: center;
     background-size: 100%;
@@ -919,7 +919,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #428bca;
+  color: #fff;
   text-decoration: none;
 }
 a:hover,
@@ -1008,7 +1008,7 @@ h6,
   font-family: inherit;
   font-weight: 500;
   line-height: 1.1;
-  color: inherit;
+  color: #FFF;
 }
 h1 small,
 h2 small,
@@ -1110,6 +1110,7 @@ h6,
 }
 p {
   margin: 0 0 10px;
+    color: #FFF;
 }
 .lead {
   margin-bottom: 20px;
@@ -4212,7 +4213,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #777;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #777;
+  color: #fff;
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {

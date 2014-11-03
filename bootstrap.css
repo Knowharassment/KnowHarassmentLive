@@ -70,6 +70,7 @@ dfn {
 h1 {
   margin: .67em ;
   font-size: 2em;
+    color: #FFF;
 }
 mark {
   color: #000;
@@ -922,7 +923,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #428bca;
+  color: #fff;
   text-decoration: none;
 }
 a:hover,
@@ -1011,7 +1012,7 @@ h6,
   font-family: inherit;
   font-weight: 500;
   line-height: 1.1;
-  color: inherit;
+  color: #FFF;
 }
 h1 small,
 h2 small,
@@ -1113,6 +1114,7 @@ h6,
 }
 p {
   margin: 0 0 10px;
+    color: #FFF:
 }
 .lead {
   margin-bottom: 20px;
@@ -1440,6 +1442,7 @@ pre code {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
+    color: #FFF;
 }
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
@@ -3949,6 +3952,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding-top: 10px;
   padding-bottom: 10px;
   line-height: 20px;
+    color: #fff;
 }
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {
@@ -4212,9 +4216,10 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-inverse {
   background-color: rgb(225,166,106);
   border-color: #080808;
+    color: inherit;
 }
 .navbar-inverse .navbar-brand {
-  color: #777;
+  color: #fff;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
@@ -4225,7 +4230,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #777;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #777;
+  color: rgb(255,255,255);
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
