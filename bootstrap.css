@@ -10,8 +10,16 @@ html {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
+  /*BEGIN BODY STYLING*/
 body {
-  margin: 0;
+    margin: auto 0 auto 0;
+    min-width: 30em;
+    background-repeat: repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 90%;
+    margin: 0 auto 0 auto;
+
 }
 article,
 aside,
@@ -60,8 +68,9 @@ dfn {
   font-style: italic;
 }
 h1 {
-  margin: .67em 0;
+  margin: .67em ;
   font-size: 2em;
+    color: #FFF;
 }
 mark {
   color: #000;
@@ -899,7 +908,11 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #fff;
+  background-image: url(images/gradientbackground2.jpg);
+    background-repeat: repeat;
+    background-position: top;
+    background-size: 100% 75em;
+    margin: 0 auto 0 auto;
 }
 input,
 button,
@@ -910,7 +923,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #428bca;
+  color: #fff;
   text-decoration: none;
 }
 a:hover,
@@ -999,7 +1012,7 @@ h6,
   font-family: inherit;
   font-weight: 500;
   line-height: 1.1;
-  color: inherit;
+  color: #FFF;
 }
 h1 small,
 h2 small,
@@ -1101,6 +1114,7 @@ h6,
 }
 p {
   margin: 0 0 10px;
+    color: #FFF:
 }
 .lead {
   margin-bottom: 20px;
@@ -1220,8 +1234,10 @@ a.bg-danger:hover {
 }
 ul,
 ol {
+    position: relative;
   margin-top: 0;
   margin-bottom: 10px;
+    
 }
 ul ul,
 ol ul,
@@ -1426,6 +1442,7 @@ pre code {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
+    color: #FFF;
 }
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
@@ -3769,7 +3786,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar {
   position: relative;
   min-height: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
   border: 1px solid transparent;
 }
 @media (min-width: 768px) {
@@ -3832,7 +3851,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .container > .navbar-collapse,
 .container-fluid > .navbar-collapse {
   margin-right: -15px;
-  margin-left: -15px;
+  margin-left: 1em;
+    padding-left: .7em;
 }
 @media (min-width: 768px) {
   .container > .navbar-header,
@@ -3854,7 +3874,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-fixed-top,
 .navbar-fixed-bottom {
-  position: fixed;
+  position: relative;
+    margin: 1em auto 1em auto;
   right: 0;
   left: 0;
   z-index: 1030;
@@ -3880,7 +3901,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-brand {
   float: left;
   height: 50px;
-  padding: 15px 15px;
+  padding: 15px  15px;
+    padding-left: .1em;
   font-size: 18px;
   line-height: 20px;
 }
@@ -3930,6 +3952,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding-top: 10px;
   padding-bottom: 10px;
   line-height: 20px;
+    color: #fff;
 }
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {
@@ -3961,6 +3984,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   .navbar-nav > li {
     float: left;
+    text-align: center;
+      font-size: .9em;
+
   }
   .navbar-nav > li > a {
     padding-top: 15px;
@@ -4188,11 +4214,12 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
 .navbar-inverse {
-  background-color: #222;
+  background-color: rgb(225,166,106);
   border-color: #080808;
+    color: inherit;
 }
 .navbar-inverse .navbar-brand {
-  color: #777;
+  color: #fff;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
@@ -4203,7 +4230,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #777;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #777;
+  color: rgb(255,255,255);
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
@@ -4214,7 +4241,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
   color: #fff;
-  background-color: #080808;
+  background-color: rgb(235,137,69);
 }
 .navbar-inverse .navbar-nav > .disabled > a,
 .navbar-inverse .navbar-nav > .disabled > a:hover,
@@ -4544,17 +4571,30 @@ a.list-group-item.active > .badge,
 .nav-pills > li > a > .badge {
   margin-left: 3px;
 }
+
+/* START JUMBOTRON CONTAINER */
 .jumbotron {
   padding: 30px;
-  margin-bottom: 30px;
-  color: inherit;
-  background-color: #00CC66;
+  margin: 0 auto 4em auto;
+  color: rgb(201,201,201) ;
+  background-color: rgb(42,62,64)
+  ;
+}
+.jumbotron img{
+    display:block; 
+    position: relative;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    
+    }
 }
 .jumbotron h1,
 .jumbotron .h1 {
-  color: inherit;
-
-  
+    display: block;
+    position: relative;
+    color: inherit;
+    text-align:center;
 }
 .jumbotron p {
   margin-bottom: 15px;
@@ -4562,6 +4602,7 @@ a.list-group-item.active > .badge,
   font-weight: 200;
   text-align: center;
   padding-left:25px;
+    text-align: left;
 }
 .jumbotron > hr {
   border-top-color: #d5d5d5;
@@ -4585,6 +4626,7 @@ a.list-group-item.active > .badge,
   .jumbotron .h1 {
     font-size: 63px;
   }
+    /* END JUMBOTRON CONTAINER */
 }
 .thumbnail {
   display: block;

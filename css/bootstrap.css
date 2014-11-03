@@ -12,6 +12,11 @@ html {
 }
 body {
   margin: 0;
+    background-repeat: repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 90%;
+    margin: 0 auto 0 auto;
 }
 article,
 aside,
@@ -60,7 +65,7 @@ dfn {
   font-style: italic;
 }
 h1 {
-  margin: .67em 0;
+  margin: .6em 0;
   font-size: 2em;
 }
 mark {
@@ -189,7 +194,7 @@ th {
 }
 @media print {
   * {
-    color: #000 !important;
+    color: #FFF; !important;
     text-shadow: none !important;
     background: transparent !important;
     -webkit-box-shadow: none !important;
@@ -898,8 +903,12 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #333;
-  background-color: #fff;
+  color: "white";
+  background-repeat: repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 90%;
+    margin: 0 auto 0 auto;
 }
 input,
 button,
@@ -910,7 +919,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #428bca;
+  color: #fff;
   text-decoration: none;
 }
 a:hover,
@@ -999,7 +1008,7 @@ h6,
   font-family: inherit;
   font-weight: 500;
   line-height: 1.1;
-  color: inherit;
+  color: #FFF;
 }
 h1 small,
 h2 small,
@@ -1101,6 +1110,7 @@ h6,
 }
 p {
   margin: 0 0 10px;
+    color: #FFF;
 }
 .lead {
   margin-bottom: 20px;
@@ -4203,7 +4213,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #777;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #777;
+  color: #fff;
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
@@ -4214,7 +4224,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
   color: #fff;
-  background-color: #080808;
+  background-color: rgb(235,137,69);
 }
 .navbar-inverse .navbar-nav > .disabled > a,
 .navbar-inverse .navbar-nav > .disabled > a:hover,
@@ -4566,7 +4576,7 @@ a.list-group-item.active > .badge,
   border-radius: 6px;
 }
 .jumbotron .container {
-  max-width: 100%;
+  max-width: 90%;
 }
 @media screen and (min-width: 768px) {
   .jumbotron {
@@ -4579,7 +4589,10 @@ a.list-group-item.active > .badge,
   }
   .jumbotron h1,
   .jumbotron .h1 {
+      display: block;
     font-size: 63px;
+      position: relative;
+      margin: inherit auto inherit auto;
   }
 }
 .thumbnail {

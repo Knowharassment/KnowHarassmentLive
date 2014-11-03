@@ -1,0 +1,16 @@
+==============================================
+Title: KnowHarassment Color Swatches (Working)
+Language: Plain Text
+Authored: Blake Ianni, 5:40 am 11/3/14
+Last Modified: Blake Ianni, 4:41 am 11/3/14
+==============================================
+
+Listed below are the rgb numbers for KnowHarassment:
+
+Light Gray: rgb(201,201,201);
+
+Dark Blue Gray: rgb(42,62,64);
+Light Blue Gray: rgb(85,125,128)
+
+Light Orange: rgb(225,166,106)
+Dark Orange: rgb(235,137,69)
