@@ -14,7 +14,7 @@ html {
 body {
     margin: auto 0 auto 0;
     min-width: 30em;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-position: center;
     background-size: 100%;
     width: 90%;
@@ -908,10 +908,9 @@ body {
   line-height: 1.42857143;
   color: #333;
   background-image: url(images/gradientbackground2.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    width: 90%;
+    background-repeat: repeat;
+    background-position: top;
+    background-size: 100% 75em;
     margin: 0 auto 0 auto;
 }
 input,
@@ -1233,8 +1232,10 @@ a.bg-danger:hover {
 }
 ul,
 ol {
+    position: relative;
   margin-top: 0;
   margin-bottom: 10px;
+    
 }
 ul ul,
 ol ul,
@@ -3848,6 +3849,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .container-fluid > .navbar-collapse {
   margin-right: -15px;
   margin-left: 1em;
+    padding-left: .7em;
 }
 @media (min-width: 768px) {
   .container > .navbar-header,
@@ -3896,7 +3898,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-brand {
   float: left;
   height: 50px;
-  padding: 15px 15px;
+  padding: 15px  15px;
+    padding-left: .1em;
   font-size: 18px;
   line-height: 20px;
 }
@@ -3979,6 +3982,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     float: left;
     text-align: center;
       font-size: .9em;
+
   }
   .navbar-nav > li > a {
     padding-top: 15px;
@@ -4206,7 +4210,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
 .navbar-inverse {
-  background-color: #222;
+  background-color: rgb(225,166,106);
   border-color: #080808;
 }
 .navbar-inverse .navbar-brand {
@@ -4232,7 +4236,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
   color: #fff;
-  background-color: #080808;
+  background-color: rgb(235,137,69);
 }
 .navbar-inverse .navbar-nav > .disabled > a,
 .navbar-inverse .navbar-nav > .disabled > a:hover,
