@@ -10,8 +10,11 @@ html {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
+/*BEGIN BODY STYLING*/
 body {
-    margin: auto 0 auto 0;    
+    margin: auto 0 auto 0;
+    min-width: 30em;
+
 }
 article,
 aside,
@@ -60,7 +63,7 @@ dfn {
   font-style: italic;
 }
 h1 {
-  margin: .67em 0;
+  margin: .67em ;
   font-size: 2em;
 }
 mark {

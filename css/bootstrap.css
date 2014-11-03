@@ -4579,7 +4579,10 @@ a.list-group-item.active > .badge,
   }
   .jumbotron h1,
   .jumbotron .h1 {
+      display: block;
     font-size: 63px;
+      position: relative;
+      margin: inherit auto inherit auto;
   }
 }
 .thumbnail {
