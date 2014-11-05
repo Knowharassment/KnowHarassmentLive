@@ -12,7 +12,7 @@
     <title>KnowHarassment</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="offcanvas.css" rel="stylesheet">
@@ -30,21 +30,26 @@
     <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="navbar-collapse">
-            <span class="sr-only"></span>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">KnowHarassment</a>
+          <a class="navbar-brand" href="index.html"><img src="images/TypeLogoMenu.png" id="navbarlogo"></a>
         </div>
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse" id="navbar">
           <ul class="nav navbar-nav">
 
-            <li><a href="index.html">Home</a></li>
-            <li class="active"><a href="about.html">About Us</a></li>
+            <li ><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
             <li><a href="editorials.html">Stories</a></li>
-			<li><a href="knowharassmentatksu.html">Cyberharassment @ KSU</a>
+			<li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Data<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="knowharassmentatksu.html">Police Report Map</a></li>
+                <li><a href="#">Police Report Data</a></li>
+                <li><a href="#">Survey Data</a></li>
+                </ul>
               </li>
 			<li><a href="https://www.facebook.com/KnowHarassment">Facebook</a></li>
 			<li><a href="https://twitter.com/KnowHarassment">Twitter</a></li>
@@ -54,7 +59,7 @@
     </div><!-- /.navbar -->
     </div><!-- /.navbar -->
 
-    <div class="container">
+    <div class="container" id="pagecontainer">
 
       <div id='01' class="row row-offcanvas row-offcanvas-right">
 
@@ -108,8 +113,8 @@ By asking students about their experience with sexual and cyberharassment direct
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>

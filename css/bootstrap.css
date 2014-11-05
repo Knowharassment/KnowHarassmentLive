@@ -10,13 +10,16 @@ html {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
+  /*BEGIN BODY STYLING*/
 body {
-  margin: 0;
+    margin: auto 0 auto 0;
+    min-width: 30em;
     background-repeat: repeat;
     background-position: center;
     background-size: 100%;
     width: 90%;
     margin: 0 auto 0 auto;
+
 }
 article,
 aside,
@@ -65,8 +68,9 @@ dfn {
   font-style: italic;
 }
 h1 {
-  margin: .6em 0;
+  margin: .67em ;
   font-size: 2em;
+    color: #FFF;
 }
 mark {
   color: #000;
@@ -194,7 +198,7 @@ th {
 }
 @media print {
   * {
-    color: #fff; !important;
+    color: #000 !important;
     text-shadow: none !important;
     background: transparent !important;
     -webkit-box-shadow: none !important;
@@ -903,12 +907,13 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #fff;
-  background-repeat: repeat;
-    background-position: center;
-    background-size: 100%;
-    width: 90%;
-    margin: 0 auto 0 auto;
+  color: #333;
+  /*background-image: url(images/gradientbackground2.jpg);*/
+    background-color:rgb(85,125,128);
+    background-repeat: repeat-y;
+    background-position:top;
+    background-size: 100% 75em;;
+    margin: 0 auto 0 auto; 
 }
 input,
 button,
@@ -925,7 +930,7 @@ a {
 a:hover,
 a:focus {
   color: #2a6496;
-  text-decoration: underline;
+  text-decoration:;
 }
 a:focus {
   outline: thin dotted;
@@ -1111,6 +1116,8 @@ h6,
 p {
   margin: 0 0 10px;
     color: #FFF;
+    font-family:' serif, rosario';
+    font-size: 1.1em;
 }
 .lead {
   margin-bottom: 20px;
@@ -1230,8 +1237,10 @@ a.bg-danger:hover {
 }
 ul,
 ol {
+    position: relative;
   margin-top: 0;
   margin-bottom: 10px;
+    
 }
 ul ul,
 ol ul,
@@ -1430,12 +1439,14 @@ pre code {
 .row {
   margin-right: -15px;
   margin-left: -15px;
+    margin-top: ;
 }
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
+    color: #FFF;
 }
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
@@ -3139,13 +3150,13 @@ tbody.collapse.in {
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 1100;
+  z-index: 1000;
   display: none;
   float: left;
   min-width: 160px;
   padding: 5px 0;
   margin: 2px 0 0;
-  font-size: 1em;
+  font-size: 14px;
   text-align: left;
   list-style: none;
   background-color: #fff;
@@ -3779,7 +3790,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar {
   position: relative;
   min-height: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
   border: 1px solid transparent;
 }
 @media (min-width: 768px) {
@@ -3842,7 +3855,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .container > .navbar-collapse,
 .container-fluid > .navbar-collapse {
   margin-right: -15px;
-  margin-left: -15px;
+  margin-left: 1em;
+    padding-left: .7em;
 }
 @media (min-width: 768px) {
   .container > .navbar-header,
@@ -3865,9 +3879,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   position: fixed;
+    margin: 0em auto 1em auto;
   right: 0;
   left: 0;
-  z-index: 1030;
+  z-index: 1050;
   -webkit-transform: translate3d(0, 0, 0);
        -o-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
@@ -3888,11 +3903,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-width: 1px 0 0;
 }
 .navbar-brand {
+    position: relative;
+    display: block;
   float: left;
   height: 50px;
-  padding: 15px 15px;
   font-size: 18px;
-  line-height: 20px;
+padding-right: .3em;
+    padding-top: .8em;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -3940,6 +3957,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding-top: 10px;
   padding-bottom: 10px;
   line-height: 20px;
+    color: #fff;
 }
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {
@@ -3971,6 +3989,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   .navbar-nav > li {
     float: left;
+    text-align: center;
+      font-size: .9em;
+
   }
   .navbar-nav > li > a {
     padding-top: 15px;
@@ -4198,11 +4219,12 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
 .navbar-inverse {
-  background-color: #222;
+  background-color: rgb(225,166,106);
   border-color: #080808;
+    color: inherit;
 }
 .navbar-inverse .navbar-brand {
-  color: #777;
+  color: #fff;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
@@ -4213,7 +4235,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #777;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #fff;
+  color: rgb(255,255,255);
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
@@ -4554,22 +4576,38 @@ a.list-group-item.active > .badge,
 .nav-pills > li > a > .badge {
   margin-left: 3px;
 }
+
+/* START JUMBOTRON CONTAINER */
 .jumbotron {
   padding: 30px;
-  margin-bottom: 30px;
-  color: inherit;
-  background-color: #eee;
+  margin: 0 auto 4em auto;
+  color: rgb(201,201,201) ;
+  background-color: rgb(42,62,64)
+  ;
+}
+.jumbotron img{
+    display:block; 
+    position: relative;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    
+    }
 }
 .jumbotron h1,
 .jumbotron .h1 {
-  color: inherit;
+    display: block;
+    position: relative;
+    color: inherit;
+    text-align:center;
 }
 .jumbotron p {
-    position: relative;
   margin-bottom: 15px;
   font-size: 21px;
   font-weight: 200;
-    text-align: justify;
+  text-align: center;
+  padding-left:25px;
+    text-align: left;
 }
 .jumbotron > hr {
   border-top-color: #d5d5d5;
@@ -4578,7 +4616,7 @@ a.list-group-item.active > .badge,
   border-radius: 6px;
 }
 .jumbotron .container {
-  max-width: 90%;
+  max-width: 100%;
 }
 @media screen and (min-width: 768px) {
   .jumbotron {
@@ -4591,11 +4629,9 @@ a.list-group-item.active > .badge,
   }
   .jumbotron h1,
   .jumbotron .h1 {
-      display: block;
     font-size: 63px;
-      position: relative;
-      margin: inherit auto inherit auto;
   }
+    /* END JUMBOTRON CONTAINER */
 }
 .thumbnail {
   display: block;
@@ -6216,3 +6252,15 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+#pagecontainer {
+    margin-top: 4em;
+}
+
+#navbarlogo {
+    margin: .8em .1em 0 .3m;
+    position: relative;
+    display: block;
+    width: 9.5em;
+    height: 1.2em;
+}
