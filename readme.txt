@@ -9,4 +9,8 @@ Please review this readme file to learn about the KnowHarassment repository.
 
 Original Contributors: Blake Ianni, Michael Pryzarty, Brandon Gerber, Nicole Barthel
 
-Working with Bootstrap.css
+The Directory:
+
+Working with Bootstrap.css:
+
+Make all mark-up changes to css/bootstrap only. Keep formatting the same per class as much as possible but add id's to elements as needed. We can apply id's to multiple elements linked in the 
