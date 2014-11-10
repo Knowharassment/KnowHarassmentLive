@@ -1,7 +1,11 @@
-
-<!DOCTYPE html>
+<?php
+require('dbconnect.php');
+include 'sanitize.php';
+?>
+<DOCTYPE HTML>
+<DOCTYPE HTML>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -14,9 +18,11 @@
 <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
   </head>
-
-  <body>
-    <div class="container">
+<body>
+<!--
+Start Navigation Menu
+-->
+<div class="container">
     <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -48,51 +54,77 @@
       </div><!-- /.container -->
     </div><!-- /.navbar -->
     </div>
+<!--
+End Navigation Menu
+-->
+<div align="center" style="margin-top: 5em; margin-bottom: 5em; font-family: helvetica, arial, sanserif;">
+<?php
+	$user = $_GET["question"];
+	//if statement will evaluate which query to run and then return the answer to the user.
+	if ($user=="one") {
+		echo "<p>" . "Thank you for your question. The average age of our survey participants is: ";
+		$result = mysqli_query($link,"SELECT AVG(Q5) FROM KnowHarassment_Results");
+		//$pass = mysqli_fetch_array($result);
+		while($row = mysqli_fetch_array($result)) {
+			echo $row['AVG(Q5)'];
+			echo "years old." ."<br>";
+			} 
+	} elseif ($user=="two") {
+		echo "<p>" . "Thank you for your question. We were surprised to find out that ";
+		$result = mysqli_query($link,"SELECT COUNT(Q10) FROM KnowHarassment_Results WHERE Q10='yes'");
+		//$pass = mysqli_fetch_array($result);
+		while($row = mysqli_fetch_array($result)) {
+			echo "<strong>" . $row['COUNT(Q10)'] . "</strong>";
+			echo " people reported that they had been sexually assaulted" . "<br>";
+			}
+	} elseif ($user=="three") {
+		echo "<p>" . "Thank you for your question. We were surprised to find out that ";
+		$result = mysqli_query($link,"SELECT COUNT(Q16) FROM KnowHarassment_Results WHERE Q16='yes'");
+		//$pass = mysqli_fetch_array($result);
+		while($row = mysqli_fetch_array($result)) {
+			echo "<strong>" . $row['COUNT(Q16)'] . "</strong>";
+			echo " people reported that they had been sexually harassed" . "<br>";
+			}
+	} elseif ($user=="four") {
+		echo "<p>" . "Thank you for your question. We were surprised to find out that ";
+		$result = mysqli_query($link,"SELECT COUNT(Q22) FROM KnowHarassment_Results WHERE Q22='yes'");
+		//$pass = mysqli_fetch_array($result);
+		while($row = mysqli_fetch_array($result)) {
+			echo "<strong>" . $row['COUNT(Q22)'] . "</strong>";
+			echo " people reported that they had been sexually harassed" . "<br>";
+			}
+	} else {
+		echo "five";
+	};
+?>
 
-    <div class="container" id="pagecontainer">
 
-      <div class="row row-offcanvas row-offcanvas-right">
+</div>
 
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <!-- <p class="pull-right visible-xs"
-            button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"> Toggle nav
-          </p>!-->
-          <div class="jumbotron"><a href="https://kent.qualtrics.com/SE/?SID=SV_d4gv0yUcOupwCyx">
-            <h1>Take our survey</h1>
-            <p>This is not an ordinary survey. This is the quickest, bestest, most helpfulest survey ever written. Its all about your experience with cyberharassment.</p>
-			
-          </a></div>
-          <div class="row">
-            <div class="col-4 col-sm-4 col-lg-4">
-              <h2>The Rise of Cyberharassment</h2>
-              <p>Read the first article written for The KnowHarassment Press!</p>
-              <p><a class="btn btn-default" href="editorials.html#02" role="button">Read Story &raquo;</a></p>
-            </div><!--/span-->
-            <div class="col-4 col-sm-4 col-lg-4">
-              <h2>The Campus Map</h2>
-              <p>We keep this map updated with details about cyberharassment on campus.</p>
-              <p><a class="btn btn-default" href="knowharassmentatksu.html" role="button">Check it Out &raquo;</a></p>
-            </div><!--/span-->
-            <div class="col-4 col-sm-4 col-lg-4">
-              <h2>Our New About Us Page</h2>
-              <p>Come check out why we're doing, what we're doing.</p>
-              <p><a class="btn btn-default" href="about.html" role="button">View details &raquo;</a></p>
-            </div><!--/span-->
-            <div class="col-6 col-sm-6 col-lg-4">
-            </div><!--/span-->
-          </div><!--/row-->
-        </div><!--/span-->
 
-       
-      </div><!--/row-->
 
-      <hr>
+<hr>
+<br><br><br><br><br><br><br><br><br><br><br>
+<h3> Look below for our full survey set.</h3>
+<?php
 
-      <footer>
+$result = mysqli_query($link,"SELECT * FROM KnowHarassment_Questions");
+echo "<table>";
+
+while($row = mysqli_fetch_array($result)) {
+  echo "<tr>";
+  echo "<td>" . $row['Question_ID'] . "</td>";
+  echo "<td>" . $row['Question_Text'] . "</td>";
+  echo "</tr>";
+};
+
+echo "</table>";
+?>
+<footer>
         <p>&copy; Coded by Gerber&Przywarty Industries</p>
       </footer>
 
-    </div><!--/.container-->
+    <!--/.container-->
 
 
 
@@ -106,5 +138,5 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
     <script src="offcanvas.js"></script>
-  </body>
+</body>
 </html>

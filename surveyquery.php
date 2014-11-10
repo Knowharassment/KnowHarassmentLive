@@ -1,7 +1,13 @@
+<?php
+require('dbconnect.php');
+include 'sanitize.php';
 
-<!DOCTYPE html>
+$result = mysqli_query($link,"SELECT * FROM KnowHarassment_Questions");
+
+?>
+<DOCTYPE HTML>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -14,9 +20,11 @@
 <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
   </head>
-
-  <body>
-    <div class="container">
+<body>
+<!--
+Start Navigation Menu
+-->
+<div class="container">
     <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -48,51 +56,33 @@
       </div><!-- /.container -->
     </div><!-- /.navbar -->
     </div>
+<!--
+End Navigation Menu
+-->
 
-    <div class="container" id="pagecontainer">
+<div align="center" style="margin-top: 1em; font-family: helvetica, arial, sanserif;">
+	<form action="http://webprod01.science.kent.edu/ClassFolder/KnowHarassment/surveyresults.php" method="get" id="Query">
+		<fieldset>
+		<legend>What would you like to know about the data we collected?</legend>
+		<select name="question" size="5">
+			<option value="one">What is the average age of the survey participants?</option>
+			<option value="two">How many people were sexually assaulted?</option>
+			<option value="three">How many people were sexually harassed?</option>
+			<option value="four">How many people were cyber-harassed?</option>
+			<option value="five">Where does cyber-harassment occur?</option>
+		</select>
+		<br>
+		<br>
+		<input type="submit" name="questionsubmit" />
 
-      <div class="row row-offcanvas row-offcanvas-right">
-
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <!-- <p class="pull-right visible-xs"
-            button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"> Toggle nav
-          </p>!-->
-          <div class="jumbotron"><a href="https://kent.qualtrics.com/SE/?SID=SV_d4gv0yUcOupwCyx">
-            <h1>Take our survey</h1>
-            <p>This is not an ordinary survey. This is the quickest, bestest, most helpfulest survey ever written. Its all about your experience with cyberharassment.</p>
-			
-          </a></div>
-          <div class="row">
-            <div class="col-4 col-sm-4 col-lg-4">
-              <h2>The Rise of Cyberharassment</h2>
-              <p>Read the first article written for The KnowHarassment Press!</p>
-              <p><a class="btn btn-default" href="editorials.html#02" role="button">Read Story &raquo;</a></p>
-            </div><!--/span-->
-            <div class="col-4 col-sm-4 col-lg-4">
-              <h2>The Campus Map</h2>
-              <p>We keep this map updated with details about cyberharassment on campus.</p>
-              <p><a class="btn btn-default" href="knowharassmentatksu.html" role="button">Check it Out &raquo;</a></p>
-            </div><!--/span-->
-            <div class="col-4 col-sm-4 col-lg-4">
-              <h2>Our New About Us Page</h2>
-              <p>Come check out why we're doing, what we're doing.</p>
-              <p><a class="btn btn-default" href="about.html" role="button">View details &raquo;</a></p>
-            </div><!--/span-->
-            <div class="col-6 col-sm-6 col-lg-4">
-            </div><!--/span-->
-          </div><!--/row-->
-        </div><!--/span-->
-
-       
-      </div><!--/row-->
-
-      <hr>
-
-      <footer>
+</fieldset>
+</form>
+</div>
+    <footer>
         <p>&copy; Coded by Gerber&Przywarty Industries</p>
       </footer>
 
-    </div><!--/.container-->
+    <!--/.container-->
 
 
 
@@ -106,5 +96,5 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
     <script src="offcanvas.js"></script>
-  </body>
+</body>
 </html>
