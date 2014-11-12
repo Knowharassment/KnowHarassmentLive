@@ -6415,6 +6415,7 @@ h4{
 
 #surveylink {
     width: 65%;
+    max-width: 8em;
 }
 
 #boxlowermargin {
