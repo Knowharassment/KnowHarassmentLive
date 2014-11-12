@@ -909,7 +909,7 @@ body {
   line-height: 1.42857143;
   color: #333;
   /*background-image: url(images/gradientbackground2.jpg);*/
-    background-color:rgb(85,125,128);
+    background-color:rgb(235,137,69);
     background-repeat: repeat-y;
     background-position:top;
     background-size: 100% 75em;;
@@ -1115,8 +1115,8 @@ h6,
 }
 p {
   margin: 0 0 10px;
-    color: #FFF;
-    font-family:' serif, rosario';
+    color:rgb(42,62,64);
+    font-family: sans-serif;
     font-size: 1.1em;
 }
 .lead {
@@ -1446,7 +1446,8 @@ pre code {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
-    color: #FFF;
+    color:rgb(85,125,128);
+    background-color:white;
 }
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
@@ -1773,7 +1774,7 @@ pre code {
     width: 91.66666667%;
   }
   .col-md-10 {
-    width: 83.33333333%;
+    width: 90%;
   }
   .col-md-9 {
     width: 75%;
@@ -3863,8 +3864,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .container-fluid > .navbar-header,
   .container > .navbar-collapse,
   .container-fluid > .navbar-collapse {
-    margin-right: 200px;
-    margin-left: 0;
+    margin-right: 15em;
+    margin-left: 0
   }
 }
 .navbar-static-top {
@@ -5875,7 +5876,7 @@ button.close {
   width: 20px;
   height: 20px;
   margin-top: -10px;
-  font-family: serif;
+  font-family: sans-serif;
 }
 .carousel-control .icon-prev:before {
   content: '\2039';
@@ -6267,11 +6268,43 @@ button.close {
 .harassmentheader{
 	Text-align: Left;
 	background-color: RGB(235,137,69);
-
-	
-	
-	
 }
+
+
+h1{
+    font:bold;
+    font-size: 70px;
+    font-weight:bold;
+    line-height: 80%;
+    text-shadow: black 0.01em 0.01em 0.01em;
+        
+}
+
+.abouth1{
+    font:bold;
+    font-size: 70px;
+    font-weight:bold;
+    line-height: 80%;
+    text-shadow: black 0.01em 0.01em 0.01em;
+    color:rgb(85,125,128);
+        
+}
+
+h3{
+    text-shadow: black 0.01em 0.01em 0.01em;
+    font-size: 30px;
+    
+}
+
+h4{
+    font-weight:200;
+    text-align: center;
+    line-height: 130%;
+    margin-left: 500px;
+    margin-right:50px;
+    letter-spacing: 1px;
+}
+
 
 .harassmenttext{
 	Text-align: Right;
@@ -6284,12 +6317,16 @@ button.close {
 	padding: 3em;
 }
 .infoheader{
-	color: rgb(81,123,126)
+	color: rgb(81,123,126);
+    text-shadow:grey 0.01em 0.01em 0.01em;
 	
 }
 
 .goal{
-	padding:3em
+	padding:3em;
+    line-height:90%;
+    text-shadow:grey 0.01em 0.01em 0.01em;
+        background-color:rgb(85,125,128);
 	
 }
 
@@ -6298,3 +6335,11 @@ button.close {
  background-color: RGB(235,137,69);
  
  }
+
+.byline{
+    padding:5em;
+    color:rgb(85,125,128);
+    line-height:130%;
+    font-style: italic;
+    font-size:13px;
+}
