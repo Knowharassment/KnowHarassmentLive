@@ -6264,7 +6264,7 @@ button.close {
     margin-top: 4em;
     margin-left: -1em;
     margin-right: 1em;
-    width: 101.7%;
+    width: 103%;
     position: relative;
 }
 
@@ -6281,6 +6281,7 @@ button.close {
 	background-color: RGB(235,137,69);
     margin-left: 10em;
     margin-top: 5em;
+    
 }
 
 
@@ -6361,8 +6362,9 @@ h4{
 }
 
 .survey{
- padding:3em;
+ padding:2em;
  background-color: RGB(235,137,69);
+    display: block;
  
  }
 
@@ -6388,4 +6390,33 @@ h4{
 
 .goalhead {
     margin-left: ;
+}
+
+.goaltext {
+    margin-top: 2em;
+}
+
+.surveyheader {
+    margin-left: 1.5em; 
+}
+
+.surveytext {
+    margin-left: 6em;
+    margin-top: 2em;
+}
+
+#surveybutton {
+    margin: 0 auto 0 auto;
+    position: relative;
+    display: block;
+    padding: 0 auto 0 auto;
+    text-align: center;
+}
+
+#surveylink {
+    width: 65%;
+}
+
+#boxlowermargin {
+    min-height: ;
 }
