@@ -3854,7 +3854,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .container-fluid > .navbar-header,
 .container > .navbar-collapse,
 .container-fluid > .navbar-collapse {
-  margin-right: -15px;
+  margin-right: -px;
   margin-left: 1em;
     padding-left: .7em;
 }
@@ -3863,7 +3863,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .container-fluid > .navbar-header,
   .container > .navbar-collapse,
   .container-fluid > .navbar-collapse {
-    margin-right: 0;
+    margin-right: 200px;
     margin-left: 0;
   }
 }
@@ -4219,12 +4219,12 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
 .navbar-inverse {
-  background-color: rgb(225,166,106);
+  background-color: white;
   border-color: #080808;
     color: inherit;
 }
 .navbar-inverse .navbar-brand {
-  color: #fff;
+  color: ;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
@@ -4235,17 +4235,17 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #777;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: rgb(255,255,255);
+  color: #777;
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-  color: #fff;
+  color: Black;
   background-color: transparent;
 }
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
-  color: #fff;
+  color: Black;
   background-color: rgb(235,137,69);
 }
 .navbar-inverse .navbar-nav > .disabled > a,
@@ -6261,6 +6261,40 @@ button.close {
     margin: .8em .1em 0 .3m;
     position: relative;
     display: block;
-    width: 9.5em;
+    width: ;
     height: 1.2em;
 }
+.harassmentheader{
+	Text-align: Left;
+	background-color: RGB(235,137,69);
+
+	
+	
+	
+}
+
+.harassmenttext{
+	Text-align: Right;
+	background-color: RGB(235,137,69);
+	padding: 3em;
+	
+}
+.infographic{
+	background-color: white;
+	padding: 3em;
+}
+.infoheader{
+	color: rgb(81,123,126)
+	
+}
+
+.goal{
+	padding:3em
+	
+}
+
+.survey{
+ padding:3em;
+ background-color: RGB(235,137,69);
+ 
+ }
