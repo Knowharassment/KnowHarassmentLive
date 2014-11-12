@@ -6374,6 +6374,7 @@ h4{
     font-size:13px;
 }
 
+<<<<<<< Updated upstream
 .infotext {
     background-color: RGB(255,255,255);
 	padding-top: 2em;
@@ -6389,3 +6390,15 @@ h4{
 .goalhead {
     margin-left: ;
 }
+=======
+.subtitle{
+    color:rgb(85,125,128);
+    line-height:130%;
+    font-size: 25px;
+    text-align: left;
+    font-weight:800;
+    padding-top: 1.3em;
+    padding-bottom: 1em;
+    
+}
+>>>>>>> Stashed changes
