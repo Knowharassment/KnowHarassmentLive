@@ -6262,8 +6262,8 @@ button.close {
 
 #pagecontainer {
     margin-top: 4em;
-    margin-left: -1em;
-    margin-right: 1em;
+    margin-left: 8em;
+    margin-right: 8em;
     width: 103%;
     position: relative;
 }
@@ -6276,13 +6276,6 @@ button.close {
     height: 1.5em;
     padding-bottom:;
 }
-.harassmentheader{
-	Text-align: Left;
-	background-color: RGB(235,137,69);
-    margin-left: 10em;
-    margin-top: 5em;
-    
-}
 
 
 h1{
@@ -6294,15 +6287,6 @@ h1{
         
 }
 
-.abouth1{
-    font:bold;
-    font-size: 70px;
-    font-weight:bold;
-    line-height: 80%;
-    text-shadow: black 0.01em 0.01em 0.01em;
-    color:rgb(85,125,128);
-        
-}
 
 h3{
     text-shadow: black 0.01em 0.01em 0.01em;
@@ -6312,20 +6296,39 @@ h3{
 
 h4{
     font-weight:200;
-    text-align: left;
+    text-align: center;
     line-height: 130%;
-    margin-left: px;
+    margin-left: 30em;
     margin-right:50px;
     letter-spacing: 1px;
 }
 
 
+.abouth1{
+    font:bold;
+    font-size: 70px;
+    font-weight:bold;
+    line-height: 80%;
+    text-shadow: black 0.01em 0.01em 0.01em;
+    color:rgb(85,125,128);
+}
+
+
+.harassmentheader{
+	Text-align: Left;
+	background-color: RGB(235,137,69);
+    margin-top: 7em;
+    margin-bottom: 2em;
+    padding-left:10em;
+    
+}
+
 .harassmenttext{
-	Text-align: left;
+	Text-align: center;
 	background-color: RGB(235,137,69);
 	padding: 2em;
     padding-left: 10em;
-    
+    margin-bottom:5em;
 	
 }
 .infographic{
@@ -6335,21 +6338,22 @@ h4{
     padding-right: auto;
     width: 100%;
     margin-right: auto;
-    margin-left: auto;
     display: inline-block;
     position: relative;
-    clear:;
+
 }
 .infoheader{
 	color: rgb(81,123,126);
     text-shadow:grey 0.01em 0.01em 0.01em;
     background-color: white;
+     margin-bottom:5em;
+    margin-top:5em;
 	
 }
 .goal{
     line-height:90%;
     text-shadow:grey 0.01em 0.01em 0.01em;
-        background-color:rgb(85,125,128);
+    background-color:rgb(85,125,128);
     padding: 2em;
     padding-left: 10em;
     padding-right: auto;
@@ -6358,13 +6362,19 @@ h4{
     margin-left: auto;
     display: inline-block;
     position: relative;
+    padding-top:7em;
+    padding-bottom:7em;
 	
 }
 
 .survey{
- padding:2em;
- background-color: RGB(235,137,69);
+    padding-top:7em;
+    padding-bottom:7em;
+    background-color: RGB(235,137,69);
     display: block;
+    padding-left:10em;
+    padding-right:auto;
+
  
  }
 
@@ -6376,11 +6386,11 @@ h4{
     font-size:13px;
 }
 
-<<<<<<< Updated upstream
+<!--Updated upstream-->
 .infotext {
     background-color: RGB(255,255,255);
 	padding-top: 2em;
-    padding-left: ;
+    padding-left:auto;
     color: rgb(81,123,126);
     
 }
@@ -6392,8 +6402,8 @@ h4{
 .goalhead {
     margin-left: ;
 }
-<<<<<<< HEAD
-=======
+<!--HEAD--->
+
 .subtitle{
     color:rgb(85,125,128);
     line-height:130%;
@@ -6404,20 +6414,21 @@ h4{
     padding-bottom: 1em;
     
 }
->>>>>>> Stashed changes
-=======
+
+<!--Stashed changes-->
 
 .goaltext {
     margin-top: 2em;
 }
 
 .surveyheader {
-    margin-left: 1.5em; 
+    margin-left: 10sem; 
 }
 
 .surveytext {
-    margin-left: 6em;
+    margin-left: 1em;
     margin-top: 2em;
+    padding-left:2em;
 }
 
 #surveybutton {
@@ -6436,4 +6447,5 @@ h4{
 #boxlowermargin {
     min-height: ;
 }
->>>>>>> FETCH_HEAD
+
+<!--FETCH_HEAD-->
