@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Test Chart 3</title>
+<script type="text/javascript" src="fusioncharts/fusioncharts.js"></script>
+<script type="text/javascript" src="fusioncharts/themes/fusioncharts.theme.fint.js"></script>
+<script type="text/javascript">
+
+FusionCharts.ready(function(){
+    var revenueChart = new FusionCharts({
+        type: "column2d",
+        renderAt: "chart-container",
+        width: "600",
+        height: "400",
+        dataFormat: "json",
+        dataSource: {
+            "chart": {
+                "caption": "Sexual Harassment Cases at Ohio State Univerisity",
+                "subCaption": "Reported cases Per Year",
+                "xAxisName": "Year",
+                "yAxisName": "Number of reported cases",
+				"canvasBgAlpha": "0",
+                "showAlternateHgridColor": "1",
+				"bgImage": "https://dl.dropboxusercontent.com/u/39907471/2013_Ohio_State_Buckeyes_logo.svg.png",
+                "bgImageAlpha":"40",
+                "bgImageDisplayMode":"center",
+				"captionFontSize": "16",
+				"subcaptionFontSize": "14",
+				"outCnvBaseFont": "helvetica",
+				"outCnvbaseFontSize": "12",
+				"outCnvbaseFontColor": "#000000",
+				"valueFontColor": "#ffffff",
+                "theme": "fint"
+				
+            },
+            "data": [
+                {
+                    "label": "2011",
+                    "value": "43",
+                    //Using color to change color of the bar
+                    "color": "#787878 "
+                },
+             
+                {
+                    "label": "2012",
+                    "value": "30",
+                    "color": "#787878 "
+                },
+             
+                {
+                    "label": "2013",
+                    "value": "40",
+                    "color": "#787878 "
+                },
+               
+               
+             ]  
+            
+        }
+    }).render("chartContainer");
+
+});
+
+</script>
+</head>
+<body>
+<div id="chartContainer">Check out the chart!</div>
+</body>
+</html>
