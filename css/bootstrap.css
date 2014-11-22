@@ -67,7 +67,7 @@ dfn {
   font-style: italic;
 }
 h1 {
-  margin: .67em ;
+  margin:;
   font-size: 2em;
     color: #FFF;
 }
@@ -6281,7 +6281,7 @@ button.close {
 
 h1{
     font:bold;
-    font-size: 70px;
+    font-size: 6em;
     font-weight:bold;
     line-height: 80%;
     text-shadow: black 0.01em 0.01em 0.01em;
@@ -6391,7 +6391,7 @@ h4{
 }
 
 #homebutton {
-    margin-left: -1em;
+    margin-left:;
 }
 
 .goalhead {
