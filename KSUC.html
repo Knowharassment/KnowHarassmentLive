@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Test Chart 3</title>
+<script type="text/javascript" src="fusioncharts/fusioncharts.js"></script>
+<script type="text/javascript" src="fusioncharts/themes/fusioncharts.theme.fint.js"></script>
+<script type="text/javascript">
+
+FusionCharts.ready(function(){
+    var revenueChart = new FusionCharts({
+        type: "column2d",
+        renderAt: "chart-container",
+        width: "600",
+        height: "400",
+        dataFormat: "json",
+        dataSource: {
+            "chart": {
+                "caption": "Sexual Harassment Cases at Kent State University",
+                "subCaption": "Reported cases Per Year",
+                "xAxisName": "Year",
+                "yAxisName": "Number of reported cases",
+				"canvasBgAlpha": "0",
+                "showAlternateHgridColor": "1",
+				"bgImage": "https://dl.dropboxusercontent.com/u/39907471/lgo_ncaa_kent_state_golden_flashes.png",
+                "bgImageAlpha":"40",
+                "bgImageDisplayMode":"Fit",
+				"captionFontSize": "16",
+				"subcaptionFontSize": "14",
+				"outCnvBaseFont": "helvetica",
+				"outCnvbaseFontSize": "11",
+				"outCnvbaseFontColor": "#000000",
+				"valueFontColor": "#ffffff",
+                "theme": "fint"
+				
+            },
+            "data": [
+                {
+                    "label": "2011",
+                    "value": "27",
+                    //Using color to change color of the bar
+                    "color": "#000066"
+                },
+             
+                {
+                    "label": "2012",
+                    "value": "22",
+                    "color": "#000066"
+                },
+             
+                {
+                    "label": "2013",
+                    "value": "24",
+                    "color": "#000066"
+                },
+               
+               
+                
+            ]
+        }
+    }).render("chartContainer");
+
+});
+
+</script>
+</head>
+<body>
+<div id="chartContainer">Check out the chart!</div>
+</body>
+</html>
