@@ -6281,7 +6281,7 @@ button.close {
 
 h1{
     font:bold;
-    font-size: 6em;
+    font-size: 5em;
     font-weight:bold;
     line-height: 80%;
     text-shadow: black 0.01em 0.01em 0.01em;
@@ -6316,9 +6316,8 @@ h4{
 .harassmentheader{
 	Text-align: Left;
 	background-color: RGB(235,137,69);
-    margin-top: 7em;
-    margin-bottom: 2em;
-    padding-left: 5em;
+    margin-top: 5em;
+    padding: 2em 2em 2em 5em;
     
 }
 
@@ -6328,11 +6327,8 @@ h4{
 }
 .infographic{
 	background-color: RGB(255,255,255);
-	padding: 2em;
-    padding-left: 10em;
-    padding-right: auto;
+    padding: 2em 2em 2em 5em;
     width: 100%;
-    margin-right: auto;
     display: inline-block;
     position: relative;
 
@@ -6341,34 +6337,24 @@ h4{
 	color: rgb(81,123,126);
     text-shadow:grey 0.01em 0.01em 0.01em;
     background-color: white;
-     margin-bottom:5em;
-    margin-top:5em;
+     margin-bottom: 2em;
 	
 }
 .goal{
     line-height:90%;
     text-shadow:grey 0.01em 0.01em 0.01em;
     background-color:rgb(85,125,128);
-    padding: 2em;
-    padding-left: 10em;
-    padding-right: auto;
+    padding: 2em 2em 2em 5em;
     width: 100%;
-    margin-right: auto;
-    margin-left: auto;
     display: inline-block;
     position: relative;
-    padding-top:7em;
-    padding-bottom:7em;
 	
 }
 
 .survey{
-    padding-top:7em;
-    padding-bottom:7em;
     background-color: RGB(235,137,69);
     display: block;
-    padding-left:10em;
-    padding-right:auto;
+    padding: 2em 2em 2em 5em;
 
  
  }
@@ -6427,7 +6413,7 @@ h4{
 }
 
 #surveybutton {
-    margin: 0 auto 0 auto;
+    margin: 2em auto 0 auto;
     position: relative;
     display: block;
     padding: 0 auto 0 auto;
@@ -6435,8 +6421,9 @@ h4{
 }
 
 #surveylink {
-    width: 65%;
-    max-width: 8em;
+    margin: 0 auto 0 auto;
+    width: 90%;
+    max-width: 25em;
 }
 
 #boxlowermargin {
@@ -6452,6 +6439,24 @@ h4{
 #knowharassmenttext {
 background-color: rgb(235,137,69);
     position: relative;
-    margin-left: 4em;
+    margin-left: ;
     margin-right: auto;
+}
+
+.footer {
+    margin: 0 auto 0 auto;
+    display: block;
+    position: relative;
+    padding: 0 auto 0 auto;
+    text-align: center;
+}
+
+#infographic {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+#harassment {
+    margin-left: em;
 }
