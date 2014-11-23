@@ -6311,6 +6311,8 @@ h4{
     line-height: 80%;
     text-shadow: black 0.01em 0.01em 0.01em;
     color:rgb(85,125,128);
+    display: inline-block;
+    margin-top: 1em;
 }
 
 
@@ -6460,4 +6462,19 @@ background-color: rgb(235,137,69);
 
 #harassment {
     margin-left: em;
+}
+
+#storyplaceholder {
+    background-color: blue;
+    text-align: center;
+    padding: 2em 2em 2em 2em;
+}
+
+.storyboard {
+    margin: 4em 0 1em 0;
+    padding: 
+}
+
+#storiespagecontainer {
+    padding: 2em 2em 2em 2em;
 }
