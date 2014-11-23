@@ -59,7 +59,7 @@ End Navigation Menu
 -->
 
 <div align="center" style="margin-top: 1em; font-family: helvetica, arial, sanserif;">
-	<form action="http://webprod01.science.kent.edu/ClassFolder/KnowHarassment/surveyresults.php" method="get" id="Query">
+	<form action="survey2.php" method="get" id="Query">
 		<fieldset>
 		<legend>What would you like to know about the data we collected?</legend>
 		<select name="question" size="5">
