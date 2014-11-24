@@ -924,7 +924,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: rgb(225,166,106);
+  color: white;
   text-decoration: none;
 }
 a:hover,
@@ -6465,6 +6465,7 @@ background-color: rgb(235,137,69);
 }
 
 #storyplaceholder {
+    background-color: blue;
     text-align: center;
     padding: 2em 2em 2em 2em;
 }
