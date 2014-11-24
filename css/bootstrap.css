@@ -924,7 +924,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: white;
+  color: rgb(225,166,106);
   text-decoration: none;
 }
 a:hover,
@@ -3959,7 +3959,7 @@ padding-right: .3em;
   }
 }
 .navbar-nav {
-    display: block;
+  margin: 7.5px -15px;
 }
 .navbar-nav > li > a {
   padding-top: 10px;
@@ -6271,10 +6271,10 @@ button.close {
 }
 
 #navbarlogo {
-    margin: 0 auto 0 auto;
+    margin: 0 0 0 4em;
     display: block;
     position: relative;
-    width: 10em;
+    width: 11em;
     height: 1.3em;
     clear: both;
 }
@@ -6477,25 +6477,4 @@ background-color: rgb(235,137,69);
 
 #storiespagecontainer {
     padding: 2em 2em 2em 2em;
-}
-
-.marker {
-    width: 2em;
-    margin: 0 .5em 0 .5em;
-}
-
-.legend {
-    background-color: white;
-    color: black;
-    border: solid;
-    border-width: thin;
-}
-
-.legendheaders {
-    color: black;
-}
-
-#map {
-    position: relative;
-    margin: 4.5em 0 0 0;
 }
