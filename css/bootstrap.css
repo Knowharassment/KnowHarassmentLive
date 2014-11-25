@@ -908,7 +908,7 @@ body {
   line-height: 1.42857143;
   color: #333;
   /*background-image: url(images/gradientbackground2.jpg);*/
-    background-color:rgb(235,137,69);
+    background-color:rgb(250,250,250);
     background-repeat: repeat-y;
     background-position:top;
     background-size: 100% 75em;;
@@ -6267,7 +6267,7 @@ button.close {
     margin-right: auto;
     width: 100%;
     position: relative;
-    background-color: rgb(235,137,69);
+    background-color: rgb(250,250,250);
 }
 
 #navbarlogo {
@@ -6363,11 +6363,13 @@ h4{
  }
 
 .byline{
-    padding:5em;
+    
     color:rgb(85,125,128);
     line-height:130%;
     font-style: italic;
     font-size:13px;
+    padding-top:2em;
+    padding-bottom:2em;
 }
 
 <!--Updated upstream-->
@@ -6465,7 +6467,6 @@ background-color: rgb(235,137,69);
 }
 
 #storyplaceholder {
-    background-color: blue;
     text-align: center;
     padding: 2em 2em 2em 2em;
 }
@@ -6477,6 +6478,7 @@ background-color: rgb(235,137,69);
 
 #storiespagecontainer {
     padding: 2em 2em 2em 2em;
+    background-color:rgb(250,250,250)
 }
 <<<<<<< HEAD
 =======
@@ -6506,4 +6508,42 @@ background-color: rgb(235,137,69);
     margin: 3em auto 0 auto;
     
 }
+
+#edh1{
+    font:bold;
+    font-size: 18px;
+    font-weight:bold;
+    padding-bottom: 10px;
+}    
+
+#EdStoryTitle{
+    font:bold;
+    font-size: 3em;
+    font-weight:bold;
+    line-height: 80%;
+    text-shadow: black 0.01em 0.01em 0.01em;
+    padding-bottom:10px;
+    padding-top:2em;
+    line-height:120%;
+}
+     
+#cutline{
+    font-style:italic;
+    font-size:12px;
+    padding-bottom:1em;
+    padding-top:1.5em;
+}
+    
+#sharethis{
+    font-family: "helvetica neue";
+    font-weight:200;
+    letter-spacing:.5em;
+    padding-top:7.5em;
+    color:black;
+    float:right;
+    font-size:12px;
+}
+    
+    
+    
 >>>>>>> FETCH_HEAD
