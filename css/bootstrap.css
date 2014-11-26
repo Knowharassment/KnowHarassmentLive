@@ -6518,12 +6518,11 @@ background-color: rgb(235,137,69);
 
 #EdStoryTitle{
     font:bold;
-    font-size: 3em;
+    font-size: 4em;
     font-weight:bold;
     line-height: 80%;
-    text-shadow: black 0.01em 0.01em 0.01em;
     padding-bottom:10px;
-    padding-top:2em;
+    padding-top:2.3em;
     line-height:120%;
 }
      
@@ -6534,15 +6533,26 @@ background-color: rgb(235,137,69);
     padding-top:1.5em;
 }
     
-#sharethis{
+#sharethistop{
     font-family: "helvetica neue";
     font-weight:200;
     letter-spacing:.5em;
     padding-top:7.5em;
     color:black;
-    float:right;
-    font-size:12px;
+    text-align: center;   
+    font-size:12px;    
 }
+
+#sharethislinks{
+    font-family: "helvetica neue";
+    font-weight:200;
+    color:black;
+    text-align:left;   
+    font-size:12px;  
+    letter-spacing: .5px;
+    padding-left:.5em;
+}    
+
     
     
     
