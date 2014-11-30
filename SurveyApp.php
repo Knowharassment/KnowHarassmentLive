@@ -117,6 +117,11 @@ $current_row_num=$current_row_num+1;
                 </p>
         </div>
         </div>
+            <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div id="chartcontainer"> Chart goes here
+                </div>
+            </div></div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <form method="get" action="SurveyApp.php" class="bootstrap-frm">
