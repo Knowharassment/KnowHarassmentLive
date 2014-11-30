@@ -6271,7 +6271,7 @@ button.close {
 }
 
 #navbarlogo {
-    margin: 0 0 0 4em;
+    margin: 0  0 4em;
     display: block;
     position: relative;
     width: 11em;
@@ -6386,8 +6386,6 @@ h4{
 .goalhead {
     margin-left: ;
 }
-<!--HEAD--->
-
 .subtitle{
     color:rgb(85,125,128);
     line-height:130%;
@@ -6432,13 +6430,6 @@ h4{
 #boxlowermargin {
    
 }
-
-<!--FETCH_HEAD-->
-
-#knowharassmenttex {
-    
-}
-
 #knowharassmenttext {
 background-color: rgb(235,137,69);
     position: relative;
@@ -6478,9 +6469,6 @@ background-color: rgb(235,137,69);
 #storiespagecontainer {
     padding: 2em 2em 2em 2em;
 }
-<<<<<<< HEAD
-=======
-
 .marker {
     width: 2em;
     margin: 0 .5em 0 .5em;
@@ -6506,4 +6494,3 @@ background-color: rgb(235,137,69);
     margin: 3em auto 0 auto;
     
 }
->>>>>>> FETCH_HEAD
