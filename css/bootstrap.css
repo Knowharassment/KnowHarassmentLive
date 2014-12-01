@@ -6485,6 +6485,7 @@ background-color: rgb(235,137,69);
 
 .legendheaders {
     color: black;
+    padding:1em;
 }
 
 #map {
