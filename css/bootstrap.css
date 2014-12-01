@@ -6544,3 +6544,26 @@ background-color: rgb(235,137,69);
     font-size:12px;  
     letter-spacing: .5px;
     padding-left:.5em;
+
+#SurveyApp {
+    margin-top: 3em;
+}
+
+#pagecontainercharts {
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    position: absolute;
+    background-color: rgb(250,250,250);
+    display: block;
+}
+
+#surveypagecontainer {
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    position: relative;
+    background-color: rgb(250,250,250);
+}
