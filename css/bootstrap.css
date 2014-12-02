@@ -6584,3 +6584,32 @@ background-color: rgb(235,137,69);
 }
     
     
+
+#menu-toggle {
+    position: absolute;
+    margin: auto auto;
+    display: block;
+    
+    
+    
+}
+
+.chartsidebar {
+    position: fixed;
+    margin: 3.6em 0 0 auto;
+    padding: 3em 1em 0 1em;
+    background-color: rgb(85,125,128);
+    height: 92.3%;
+    color: white;
+    list-style-type: none;
+}
+
+#nestedul {
+    color: inherit;
+    list-style-type: inherit;
+}
+
+#datapage {
+    margin: 5em 0 0 11em;
+    max-width: 85%;
+}
