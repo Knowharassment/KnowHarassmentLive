@@ -4262,7 +4262,8 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
   color: Black;
-  background-color: rgb(235,137,69);
+ outline: 1px solid white;
+border-top: 1px solid black;
   
   
 }
