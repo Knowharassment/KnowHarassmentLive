@@ -16,19 +16,27 @@ FusionCharts.ready(function(){
         dataSource: {
             "chart": {
                 "caption": "Sexual Harassment Cases at Kent State University",
-                "subCaption": "Reported cases Per Year",
+                "subCaption": "Reported cases per year",
                 "xAxisName": "Year",
                 "yAxisName": "Number of reported cases",
 				"canvasBgAlpha": "0",
-                "showAlternateHgridColor": "1",
-				"bgImage": "https://dl.dropboxusercontent.com/u/39907471/lgo_ncaa_kent_state_golden_flashes.png",
-                "bgImageAlpha":"40",
-                "bgImageDisplayMode":"Fit",
+               //Background color,ratio and alpha
+                "bgColor": "#EEEEEE,#CCCCCC",
+                "bgratio": "60,40",
+                "bgAlpha": "70,80",
+				//Border Properties
+                "showBorder": "1",
+                "borderColor": "#557D80",
+                "borderThickness": "4",
+                "borderAlpha": "80",
+                //Caption Sizes and Fonts
 				"captionFontSize": "16",
 				"subcaptionFontSize": "14",
+                //Any text on outside of the chart
 				"outCnvBaseFont": "helvetica",
 				"outCnvbaseFontSize": "11",
 				"outCnvbaseFontColor": "#000000",
+                //Vaule color and sizes
 				"valueFontColor": "#ffffff",
                 "theme": "fint"
 				
@@ -38,19 +46,19 @@ FusionCharts.ready(function(){
                     "label": "2011",
                     "value": "27",
                     //Using color to change color of the bar
-                    "color": "#000066"
+                    "color": "#2A3E40"
                 },
              
                 {
                     "label": "2012",
                     "value": "22",
-                    "color": "#000066"
+                    "color": "#2A3E40"
                 },
              
                 {
                     "label": "2013",
                     "value": "24",
-                    "color": "#000066"
+                    "color": "#2A3E40"
                 },
                
                

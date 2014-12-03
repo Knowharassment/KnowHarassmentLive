@@ -1242,6 +1242,7 @@ ol {
   margin-top:;
     margin-left: auto;
     margin-right: auto;
+    color:black;
     
 }
 ul ul,
@@ -1432,8 +1433,7 @@ pre code {
   }
 }
 .container-fluid {
-  padding-right: 15px;
-  padding-left: 15px;
+    padding: ;
   margin-right: auto;
   margin-left: auto;
 }
@@ -2805,6 +2805,7 @@ fieldset[disabled] .btn {
   color: rgb(235,137,69);
   background-color: #e6e6e6;
   border-color: #adadad;
+    
 }
 .btn-default:active,
 .btn-default.active,
@@ -2867,8 +2868,8 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #428bca;
-  border-color: #357ebd;
+  background-color: rgb(225,166,106);
+  border-color: rgb(235,137,69);
 }
 .btn-primary .badge {
   color: #428bca;
@@ -3599,11 +3600,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-left: -1px;
 }
 .nav {
-  padding-left: 1em;
-  margin-bottom: 0;
+
   list-style: none;
     position: inherit;
-    display: block;
+    display:block;
 }
 .nav > li {
   position: relative;
@@ -3794,8 +3794,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar {
   position: relative;
-  min-height: 45px;
-  margin-bottom: 0;
+    display: block;
+  min-height:;
+  margin-bottom:0;
   margin-left: auto;
   margin-right: auto;
   border: 1px solid transparent;
@@ -3808,6 +3809,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
   .navbar-header {
     float: left;
+      align-content: center;
+      padding-top: .em;
   }
 }
 .navbar-collapse {
@@ -3885,10 +3888,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   position: fixed;
-    margin: 0em auto 0em auto;
+    
+margin: 0em auto 0em auto;
+    
   right: 0;
   left: 0;
-  z-index: 1050;
+  z-index: 1250;
   -webkit-transform: translate3d(0, 0, 0);
        -o-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
@@ -3896,12 +3901,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
   .navbar-fixed-top,
   .navbar-fixed-bottom {
-    border-radius: 0;
+    border-radius: 2px;
   }
 }
 .navbar-fixed-top {
   top: 0;
-  border-width: 0 0 1px;
+  border-width: 0 0 1px 0;
+   
+    
 }
 .navbar-fixed-bottom {
   bottom: 0;
@@ -3914,7 +3921,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   height: 50px;
   font-size: 18px;
 padding-right: .3em;
-    padding-top: .8em;
+    padding-top: .5em;
     margin-right: 3em;
     
 }
@@ -3960,6 +3967,9 @@ padding-right: .3em;
 }
 .navbar-nav {
   margin: 7.5px -15px;
+    padding:.5em;
+    margin-left:4em;
+    margin-right:4em;
 }
 .navbar-nav > li > a {
   padding-top: 10px;
@@ -3992,8 +4002,8 @@ padding-right: .3em;
 }
 @media (min-width: 768px) {
   .navbar-nav {
-    float: left;
-    margin: 0;
+    float: right;
+    margin-right: em;
   }
   .navbar-nav > li {
     float: left;
@@ -4254,7 +4264,10 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
   color: Black;
-  background-color: rgb(235,137,69);
+ outline: 1px solid white;
+border-top: 1px solid black;
+  
+  
 }
 .navbar-inverse .navbar-nav > .disabled > a,
 .navbar-inverse .navbar-nav > .disabled > a:hover,
@@ -6271,12 +6284,14 @@ button.close {
 }
 
 #navbarlogo {
-    margin: 0  0 4em;
     display: block;
     position: relative;
-    width: 11em;
     height: 1.3em;
     clear: both;
+    float:left;
+    align-items: center;
+    padding-left:3em;
+    margin-top: .6em;
 }
 
 
@@ -6304,7 +6319,7 @@ h4{
 }
 
 
-.abouth1{
+<!--.abouth1{
     font:bold;
     font-size: 70px;
     font-weight:bold;
@@ -6313,7 +6328,7 @@ h4{
     color:rgb(85,125,128);
     display: inline-block;
     margin-top: 1em;
-}
+}-->
 
 
 .harassmentheader{
@@ -6439,12 +6454,11 @@ background-color: rgb(235,137,69);
     margin-right: auto;
 }
 
-.footer {
-    margin: 0 auto 0 auto;
+#footer{
     display: block;
-    position: relative;
-    padding: 0 auto 0 auto;
+    padding: 2em;
     text-align: center;
+    color:grey;
 }
 
 #infographic {
@@ -6459,7 +6473,7 @@ background-color: rgb(235,137,69);
 
 #storyplaceholder {
     text-align: center;
-    padding: 2em 2em 2em 2em;
+    padding: .5em;
 }
 
 .storyboard {
@@ -6481,10 +6495,12 @@ background-color: rgb(235,137,69);
     color: black;
     border: solid;
     border-width: thin;
+    margin-left: 1em;
 }
 
 .legendheaders {
     color: black;
+    padding:1em;
 }
 
 #map {
@@ -6497,10 +6513,12 @@ background-color: rgb(235,137,69);
     
 }
 #edh1{
-    font:bold;
     font-size: 18px;
-    font-weight:bold;
-    padding-bottom: 10px;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    font-family: "helvetica neue";
+    letter-spacing: .04em;
+    font-weight: 300;
 }    
 
 #EdStoryTitle{
@@ -6508,15 +6526,15 @@ background-color: rgb(235,137,69);
     font-size: 4em;
     font-weight:bold;
     line-height: 80%;
-    padding-bottom:10px;
-    padding-top:2.3em;
+    padding-bottom:.5em;
+    padding-top:2.1em;
     line-height:120%;
 }
      
 #cutline{
     font-style:italic;
     font-size:12px;
-    padding-bottom:1em;
+    padding-bottom:.2em;
     padding-top:1.5em;
 }
     
@@ -6538,3 +6556,121 @@ background-color: rgb(235,137,69);
     font-size:12px;  
     letter-spacing: .5px;
     padding-left:.5em;
+}
+
+#SurveyApp {
+    margin-top: 3em;
+}
+
+#pagecontainercharts {
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    position: absolute;
+    background-color: rgb(250,250,250);
+    display: block;
+}
+
+#surveypagecontainer {
+    margin-top: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    position: relative;
+    background-color: rgb(250,250,250);
+}
+
+#first {
+    margin-top: 2em;
+}
+    
+#previewcontainer{
+    padding:.7em;
+}
+    
+    
+
+#menu-toggle {
+    position: absolute;
+    margin: auto auto;
+    display: block;
+    
+    
+    
+}
+
+.chartsidebar {
+    position: fixed;
+    margin: 3.6em 0 0 auto;
+    padding: 3em 1em 0 1em;
+    background-color: rgb(85,125,128);
+    height: 92.3%;
+    color: white;
+    list-style-type: none;
+    z-index: 1000;
+}
+
+#nestedul {
+    color: inherit;
+    list-style-type: inherit;
+}
+
+#datapage {
+    margin: 7em 0 0 0;
+    padding: 0 0 0 11em;
+    position: relative;
+    
+}
+
+#chart-container {
+    position: relative;
+    display: block;
+    margin:0 0 0 0;
+    padding: 3em 1em 1em 1em;
+    height: 70%;
+    width: 100%;
+    max-width: 50em;
+    max-height: 70em;
+}
+
+#titleheader {
+    padding-top:2.8em;
+    padding-bottom:.3em;
+    font-family: "helvetica neue";
+    font-size:3em; 
+    letter-spacing:.08em;
+    color:black;
+    font-weight: 100;
+    
+}
+
+#subhead {
+    padding-top:.2em;
+    padding-bottom:.2em;
+    text-transform: capitalize;
+    font-family: "helvetica neue";
+    font-size:1.5em; 
+    letter-spacing:.1em;
+    color:rgb(235,137,69);
+    font-weight: 100;   
+}
+.chartcontrol {
+    display: block;
+    position: relative;
+    margin: 0 0 0 0;
+    padding: 2em auto 0 auto;
+}
+
+.crimebutton {
+    padding: 3em 0 2em 0;
+    display: inline-block;
+    float: left;
+    margin: auto auto;
+    width: 20%;
+    
+}
+
+.chartContainer {
+    margin: 0 auto 0 auto;
+}

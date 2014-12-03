@@ -9,18 +9,21 @@
     <link rel="icon" href="../../favicon.ico">
 
     <title>KnowHarassment</title>
+      <br>
+      <br>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="offcanvas.css" rel="stylesheet">
+    <link href="offcanvas.css" rel="stylesheet">      
       <script src="js/bootstrap.js"></script>
       <script src="/js/bootstrap.min.js"></script>
       <script type="text/javascript" src="fusioncharts/fusioncharts.js"></script>
 <script type="text/javascript" src="fusioncharts/themes/fusioncharts.theme.fint.js"></script>
-      <script type="text/javascript">
-
+      <script type="text/javascript"> 
+    
+    
 FusionCharts.ready(function(){
     var revenueChart = new FusionCharts({
         type: "column2d",
@@ -31,19 +34,27 @@ FusionCharts.ready(function(){
         dataSource: {
             "chart": {
                 "caption": "Sexual Harassment Cases at Kent State University",
-                "subCaption": "Reported cases Per Year",
+                "subCaption": "Reported cases per year",
                 "xAxisName": "Year",
                 "yAxisName": "Number of reported cases",
 				"canvasBgAlpha": "0",
-                "showAlternateHgridColor": "1",
-				"bgImage": "https://dl.dropboxusercontent.com/u/39907471/lgo_ncaa_kent_state_golden_flashes.png",
-                "bgImageAlpha":"40",
-                "bgImageDisplayMode":"Fit",
+               //Background color,ratio and alpha
+                "bgColor": "#EEEEEE,#CCCCCC",
+                "bgratio": "60,40",
+                "bgAlpha": "70,80",
+				//Border Properties
+                "showBorder": "1",
+                "borderColor": "#557D80",
+                "borderThickness": "4",
+                "borderAlpha": "80",
+                //Caption Sizes and Fonts
 				"captionFontSize": "16",
 				"subcaptionFontSize": "14",
+                //Any text on outside of the chart
 				"outCnvBaseFont": "helvetica",
 				"outCnvbaseFontSize": "11",
 				"outCnvbaseFontColor": "#000000",
+                //Vaule color and sizes
 				"valueFontColor": "#ffffff",
                 "theme": "fint"
 				
@@ -53,19 +64,19 @@ FusionCharts.ready(function(){
                     "label": "2011",
                     "value": "27",
                     //Using color to change color of the bar
-                    "color": "#000066"
+                    "color": "#2A3E40"
                 },
              
                 {
                     "label": "2012",
                     "value": "22",
-                    "color": "#000066"
+                    "color": "#2A3E40"
                 },
              
                 {
                     "label": "2013",
                     "value": "24",
-                    "color": "#000066"
+                    "color": "#2A3E40"
                 },
                
                
@@ -76,14 +87,13 @@ FusionCharts.ready(function(){
 
 });
 
-</script>
-
+      </script>
   </head>
 
   <body>
     <div class="container">
     <div class="navbar navbar-fixed-top navbar-inverse navbar-collapse" role="navigation">
-      <div class="container">
+      <div class="pagecontainer">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -93,32 +103,89 @@ FusionCharts.ready(function(){
           </button>
           <a class="navbar-brand" href="#"><img src="images/TypeLogoMenu.png" id="navbarlogo"></a>
         </div>
-        <div class="collapse navbar-collapse" id="navbar">
+        <div class="collapse navbar-collapse" id="navbar" style="padding-right:20px;">
           <ul class="nav navbar-nav">
 
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="editorials.html">Stories</a></li>
-			<li class="active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Data<span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="knowharassmentatksu.html">Police Report Map</a></li>
-                <li><a href="policedata.html">Police Report Data</a></li>
-                <li><a href="#">Survey Data</a></li>
-                </ul>
-              </li>
-<li><a href="https://www.facebook.com/KnowHarassment"><img src="images/fb512x512.png"></a></li>
-			<li><a href="https://twitter.com/KnowHarassment"><img src="images/tw512x512.png"></a></li>
+			<li class="active"><a href="surveymain.php">Our Data</a></li>
           </ul>
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->
     </div><!-- /.navbar -->
     </div>
-      
-<div class="container" id="storiespagecontainer">
-    <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+ <div id='02' class="col-xs-12 col-sm-12">
+            
+<div class="col-12 col-sm-8 col-lg-8 main">     
     <div id="chartContainer">Check out the chart!
-    </div></div></div></div>
+    </div>
+    </div>
+      
+<!--BEGINNING OF SIDE BAR-->      
+      
+<div class="col-12 col-sm-4 col-lg-4 right">
+
+    <div id="sharethistop">
+        SHARE THIS
+    
+    <br><br><br>
+    
+    <a href="http://facebook.com/knowharassment">
+        <img src="images/facebook.png">
+    </a>
+    &nbsp;
+    <a href="http://www.twitter.com/knowharassment">
+        <img src="images/twitter.png">
+    </a>
+     &nbsp;    
+        <a href="xxx">
+            <img src="images/rss">
+        </a>
+    <hr>    
+    
+    <br>
+        RECENT NEWS
+    
+    <br><Br><Br>
+    </div>
+    
+    
+    <div id="sharethislinks">
+        <ul>
+        <li>
+            <a href="story_rise.html">The Rise of Cyberharassment</a>
+        </li>    
+        <br>
+    
+        <li>
+            <a href="Story_BriannaNeal.html">Brianna Neal
+            </a>
+        </li>
+        <br>
+        
+        <li>
+            <a href="Story_TheWhoAndTheWhy.html">Cyberharassment: The who and the why
+            </a>
+        </li>
+        
+    </ul>
+    </div>
+     
+</div>        
+
+    <!--/row-->
+&nbsp;
+      <div id="footer">
+    KnowHarassment 2014. © &nbsp; &nbsp;&nbsp; <A href="TermsofUse.html">Terms of use.</a>
+      </div>
+
+    </div><!--/.container-->
+      
+      
+      
+      
+      
 
  <!-- Bootstrap core JavaScript
     ================================================== -->
