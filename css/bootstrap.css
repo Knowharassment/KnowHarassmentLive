@@ -6603,6 +6603,7 @@ background-color: rgb(235,137,69);
     height: 92.3%;
     color: white;
     list-style-type: none;
+    z-index: 1000;
 }
 
 #nestedul {
@@ -6612,5 +6613,13 @@ background-color: rgb(235,137,69);
 
 #datapage {
     margin: 5em 0 0 11em;
-    max-width: 85%;
+    max-width: ;
+}
+
+#chart-container {
+    display: block;
+    position: relative;
+    margin: 0 0 0 0;
+    max-width: ;
+    max-height: ;
 }
