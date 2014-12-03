@@ -2805,6 +2805,7 @@ fieldset[disabled] .btn {
   color: rgb(235,137,69);
   background-color: #e6e6e6;
   border-color: #adadad;
+    
 }
 .btn-default:active,
 .btn-default.active,
