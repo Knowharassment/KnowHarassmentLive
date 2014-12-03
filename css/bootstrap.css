@@ -6622,8 +6622,9 @@ background-color: rgb(235,137,69);
 #chart-container {
     position: relative;
     margin:0 0 0 0;
+    padding: 3em 0 0 0;
     height: 60%;
-    width: 60%;
+    width: 65%;
     max-width: 50em;
     max-height: 70em;
 }

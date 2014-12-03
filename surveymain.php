@@ -1,7 +1,7 @@
-<php
+<?php
      require('dbconnect.php');
      require('sanitize.php');
-     error_reporting(-1);
+     //error_reporting(-1);
      
 //initialize graph variables
      $issue=$_GET['para1'];
@@ -10,33 +10,33 @@
 //setting y-axis
      
      if ($issue==""){
-        $issue='SH';
+        $issue="SH";
      }
      
      if ($issue=="SH"){
         $y_label='Amount of Sexual Harassment Reported';
      }
      
-     if ($issue="SA"){
+     if ($issue=="SA"){
         $y_label='Amount of Sexual Assault Reported';
      }
      
-     if ($issue="CH"){
+     if ($issue=="CH"){
         $y_label='Amount of cyber-harassment reported';
      }
 
 // setting x-axis
     
-     if ($demo=""){
+     if ($demo==""){
         $demo="gender";
     }
      
-     if (demo="gender"){
+     if ($demo=="gender"){
         $x_label="Gender of Respondents";
      }
      
-     if ($demo="age"){
-        $x_label="Age of Respondents"
+     if ($demo=="age"){
+        $x_label="Age of Respondents";
      }
 ?>
 <html lang="en">
@@ -71,8 +71,10 @@ FusionCharts.ready(function(){
             "chart": {
                 "caption": "Survey Test Chart",
                 "subCaption": "Subcaption",
-                "xAxisName": "x-axis label",
-                "yAxisName": "y-axis label",
+        
+                "xAxisName": "<?php echo $x_label;?>",
+                "yAxisName": "<?php echo $y_label;?>",
+                
 				"canvasBgAlpha": "0",
                 "showAlternateHgridColor": "1",
 				"captionFontSize": "16",
@@ -81,28 +83,39 @@ FusionCharts.ready(function(){
 				"outCnvbaseFontSize": "11",
 				"outCnvbaseFontColor": "#000000",
 				"valueFontColor": "#ffffff",
-                "theme": "fint"
+                "theme": "fint",
 				
             },
             "data": [
+                <?php
+if($issue=="SH"){
+    if($demo=="gender"){
+$result=mysqli_query($link, "SELECT Q4.male, Q4.female, COUNT(Q16) FROM KnowHarassment_Results WHERE Q16='yes'") or die (mysql_error());
+    };
+};
+$total_num_rows=mysqli_num_rows($result);
+$current_row_num=1;
+while($row = mysqli_fetch_array($result)) {
+  if($current_row_num==$total_num_rows){
+?> 
                 {
-                    "label": "2011",
-                    "value": "27",
+                    "label": "<?php echo $row[0]; ?>",
+                    "value": "<?php echo $row[1]; ?>",
                     "color": "#000066"
-                },
-             
-                {
-                    "label": "2012",
-                    "value": "22",
-                    "color": "#000066"
-                },
-             
-                {
-                    "label": "2013",
-                    "value": "24",
-                    "color": "#000066"
-                },
-               
+                }
+    <?php 
+ } else {
+    ?>
+          {  
+             "label": "<?php echo $row[0]; ?>",
+             "value": "<?php echo $row[1]; ?>",
+             "color": "#000066"
+          }
+                <?php    
+  }
+$current_row_num=$current_row_num+1;
+};
+?>
                
                 
             ]
@@ -188,6 +201,16 @@ FusionCharts.ready(function(){
         </form>
                     </fieldset>
                     </div>
+                <table></table>
+                <?php
+    while($row = mysqli_fetch_array($result)) {
+  echo "<tr>";
+  echo "<td>" . $row[0] . "</td>";
+  echo "<td>" . $row[1] . "</td>";
+  echo "</tr>";
+};
+echo "</table>";
+?>
         </div>
         </div>
           </div>
