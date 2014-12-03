@@ -139,18 +139,8 @@ FusionCharts.ready(function(){
 
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li class="active"><a href="editorials.html">Stories</a></li>
-			<li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Data<span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="knowharassmentatksu.html">Police Report Map</a></li>
-                <li><a href="policedata.html">Police Report Data</a></li>
-                <li><a href="#">Survey Data</a></li>
-                </ul>
-              </li><!--
-<li><a href="https://www.facebook.com/KnowHarassment"><img src="images/fb512x512.png"></a></li>
-			<li><a href="https://twitter.com/KnowHarassment"><img src="images/tw512x512.png"></a></li>
--->
-              
+            <li><a href="editorials.html">Stories</a></li>
+			<li class="active"><a href="surveymain.php">Our Data</a></li>
           </ul>
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->
@@ -170,15 +160,6 @@ FusionCharts.ready(function(){
             <li><a href="knowharassmentatksu.html" style="color: black;">Crime Data</a></li>
             </ul>
           </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 crimebutton">
-                <button type="button">Cyber-harassment</button>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 crimebutton">
-                <button type="button">Sexual Harassment</button>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 crimebutton">
-                <button type="button">Sexual Assault</button>
-                </div>
               <div class="col-lg-10 col-md-7 col-sm-8 col-xs-8" id="chart-container">
                 Expect the Chart Here
               </div>

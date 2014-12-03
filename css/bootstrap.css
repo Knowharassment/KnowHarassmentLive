@@ -6628,11 +6628,6 @@ background-color: rgb(235,137,69);
     max-height: 70em;
 }
 
-#chartrow {
-    
-}
-
-
 #titleheader {
     padding-top:2.8em;
     padding-bottom:.3em;
@@ -6653,23 +6648,13 @@ background-color: rgb(235,137,69);
     letter-spacing:.1em;
     color:rgb(235,137,69);
     font-weight: 100;   
-=======
-.bootstrap-frm {
-    
 }
-
 .chartcontrol {
     display: block;
     position: relative;
     margin: 0 0 0 0;
     padding: 2em auto 0 auto;
 }
-
-
-
-
-
-
 
 .crimebutton {
     padding: 3em 0 2em 0;
@@ -6678,5 +6663,4 @@ background-color: rgb(235,137,69);
     margin: auto auto;
     width: 20%;
     
->>>>>>> FETCH_HEAD
 }
