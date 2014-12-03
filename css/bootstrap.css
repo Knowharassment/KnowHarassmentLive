@@ -6613,18 +6613,26 @@ background-color: rgb(235,137,69);
 }
 
 #datapage {
-    margin: 5em 0 0 11em;
+    margin: 7em 0 0 0;
+    padding: 0 0 0 11em;
+    position: relative;
+    
 }
 
 #chart-container {
     position: relative;
     margin: 0 auto 0 auto;
+    height: 60%;
+    width: 100%;
+    max-width: 50em;
+    max-height: 70em;
 }
 
 #chartrow {
     
 }
 
+<<<<<<< HEAD
 #titleheader {
     padding-top:2.8em;
     padding-bottom:.3em;
@@ -6645,4 +6653,21 @@ background-color: rgb(235,137,69);
     letter-spacing:.1em;
     color:rgb(235,137,69);
     font-weight: 100;   
+=======
+.bootstrap-frm {
+    
+}
+
+.chartcontrol {
+    display: block;
+    position: relative;
+    margin: 2em 0 0 0;
+    padding: 0 auto 0 auto;
+}
+
+
+
+#chartsidebar {
+    
+>>>>>>> FETCH_HEAD
 }
