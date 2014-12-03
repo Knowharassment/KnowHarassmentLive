@@ -17,15 +17,73 @@
     <!-- Themes/addons -->
     <link href="offcanvas.css" rel="stylesheet">
     <link href="css/dashboard.css" rel="stylesheet">
-      <script src="js/bootstrap.js"></script>
-      <script src="/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="fusioncharts/fusioncharts.js"></script>
+<script type="text/javascript" src="fusioncharts/themes/fusioncharts.theme.fint.js"></script>
 
+<script type="text/javascript">    
+    FusionCharts.ready(function(){
+    var revenueChart = new FusionCharts({
+        type: "column2d",
+        renderAt: "chartContainer",
+        width: "600",
+        height: "400",
+        dataFormat: "json",
+        dataSource: {
+            "chart": {
+                "caption": "Sexual Harassment Cases at Kent State University",
+                "subCaption": "Reported cases per year",
+                "xAxisName": "Year",
+                "yAxisName": "Number of reported cases",
+				"canvasBgAlpha": "0",
+               //Background color,ratio and alpha
+                "bgColor": "#EEEEEE,#CCCCCC",
+                "bgratio": "60,40",
+                "bgAlpha": "70,80",
+				//Border Properties
+                "showBorder": "1",
+                "borderColor": "#557D80",
+                "borderThickness": "4",
+                "borderAlpha": "80",
+                //Caption Sizes and Fonts
+				"captionFontSize": "16",
+				"subcaptionFontSize": "14",
+                //Any text on outside of the chart
+				"outCnvBaseFont": "helvetica",
+				"outCnvbaseFontSize": "11",
+				"outCnvbaseFontColor": "#000000",
+                //Vaule color and sizes
+				"valueFontColor": "#ffffff",
+                "theme": "fint",
+				
+            },
+            "data": [
+                {
+                    "label": "2011",
+                    "value": "27",
+                    //Using color to change color of the bar
+                    "color": "#2A3E40",
+                },
+             
+                {
+                    "label": "2012",
+                    "value": "22",
+                    "color": "#2A3E40",
+                },
+             
+                {
+                    "label": "2013",
+                    "value": "24",
+                    "color": "#2A3E40",
+                },
+               
+               
+                
+            ]
+        }
+    })revenueChart.render("chartContainer");
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+});
+</script>
   </head>
 
   <body>
@@ -119,24 +177,28 @@ Click the points on the map to learn more about each police report. Refer to the
 			</table>
 			</div>
             <div class="col-md-9 col-xs-7 col-sm-7 col-lg-9">
-              <div id="map"><iframe frameborder=0 style='display:block; width:100%;height:500px; margin-left:auto; margin-right: auto; padding-top: 3em' src='//www.zeemaps.com/pub?group=1171252&legend=1&x=-81.342079&y=41.149804&z=2'> </iframe></div></div></div>
-            </div><!--/span-->
+              <div id="map"><iframe frameborder=0 style='display:block; width:100%;height:500px; margin-left:auto; margin-right: auto; padding-top: 3em' src='//www.zeemaps.com/pub?group=1171252&legend=1&x=-81.342079&y=41.149804&z=2'> </iframe></div></div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                      <div class="chartContainer" id="chartContainer">
+                      Please excuse our dust
+                      </div></div>
+                  </div>
+                  
+              </div>
+            <!--/span-->
             <!--/span-->
             <!--/span-->
           <!--/row-->
-        </div><!--/span-->
+        <!--/span-->
 
        
-      </div><!--/row-->
+      <!--/row-->
 
       <hr>
 
          <div id="footer">
     KnowHarassment 2014. © &nbsp; &nbsp; <A href="TermsofUse.html">Terms of use.</a>
       </div>
-    
-        </div>
-
     </div><!--/.container-->
 
 
@@ -146,6 +208,9 @@ Click the points on the map to learn more about each police report. Refer to the
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
+      <script >
+      
+      </script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>

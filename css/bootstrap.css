@@ -6670,3 +6670,7 @@ background-color: rgb(235,137,69);
     width: 20%;
     
 }
+
+.chartContainer {
+    margin: 0 auto 0 auto;
+}
