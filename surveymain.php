@@ -1,7 +1,8 @@
 <?php
      require('dbconnect.php');
      require('sanitize.php');
-     //error_reporting(-1);
+     error_reporting(-1);
+     error_reporting(E_ALL ^ E_NOTICE);
      
 //initialize graph variables
      $issue=$_GET['para1'];
@@ -40,7 +41,8 @@
      }
 // Setting Caption
     if($issue=="SH" && $demo=="gender"){
-        $caption="Cases of Sexual Harassment by Gender";
+        $caption="Cases of Sexual Harassment";
+        $subcaption="per gender";
     
     }
 ?>
@@ -176,7 +178,7 @@ $current_row_num=$current_row_num+1;
           </button>
           <a class="navbar-brand" href="index.html"><img src="images/TypeLogoMenu.png" id="navbarlogo"></a>
         </div>
-        <div class="collapse navbar-collapse" id="navbar">
+        <div class="collapse navbar-collapse" id="navbar" style="padding-right:20px;">
           <ul class="nav navbar-nav">
 
             <li><a href="index.html">Home</a></li>
@@ -190,7 +192,7 @@ $current_row_num=$current_row_num+1;
     </div><!-- /.navbar -->
       
 <!--Content Begins Here-->
-            <div class="container-fluid">
+            <div class="container-fluid" id="datapagecontainer">
       <div class="row">
         <div class="col-sm-4 col-md-2 col-lg-2 col-xs-4 sidebar">
           <p id="chartsidebartitle">
@@ -202,7 +204,22 @@ $current_row_num=$current_row_num+1;
             <li><a href="knowharassmentatksu.html" style="color: black;">Crime Data</a></li>
             </ul>
           </div>
-              <div class="col-lg-10 col-md-7 col-sm-8 col-xs-8" id="chart-container">
+                <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12" style="padding: 0 0 0 3em;">
+
+        <div id="titleheader" style="padding: 0 0 0 0;"> Cyberharassment at Kent State
+        </div>
+
+            <br>
+            <div id="subhead">The Survey Database</div>
+                
+            <p>We wanted to learn as much as possible about harassment issues here at Kent State. In October we distrubited a survey in an attempt to get answers straight from the student body. The responses that we've recieved have vindicated our mission. Below, you'll have a chance to see the responses in many ways.
+                <br><Br>
+<strong>
+Below you can choose which harassment issue you'd like to explore. You can also choose to view the data in different ways. 
+</strong>
+</p>
+            </div>
+              <div class="col-lg-10 col-md-7 col-sm-12 col-xs-12" id="chart-container">
                 Expect the Chart Here
               </div>
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
@@ -230,6 +247,13 @@ $current_row_num=$current_row_num+1;
         </form>
                     </fieldset>
                     </div></div></div>
+      <hr>
+
+         <div id="footer">
+    KnowHarassment 2014. © &nbsp; &nbsp; <A href="TermsofUse.html">Terms of use.</a>
+      </div>
+    
+        </div>
         </div>
         
     <!-- Bootstrap core JavaScript
