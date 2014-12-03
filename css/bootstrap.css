@@ -6317,7 +6317,7 @@ h4{
 }
 
 
-.abouth1{
+<!--.abouth1{
     font:bold;
     font-size: 70px;
     font-weight:bold;
@@ -6326,7 +6326,7 @@ h4{
     color:rgb(85,125,128);
     display: inline-block;
     margin-top: 1em;
-}
+}-->
 
 
 .harassmentheader{
@@ -6510,10 +6510,11 @@ background-color: rgb(235,137,69);
     
 }
 #edh1{
-    font:bold;
     font-size: 18px;
-    font-weight:bold;
     padding-bottom: 1em;
+    font-family: "helvetica neue";
+    letter-spacing: .04em;
+    font-weight: 300;
 }    
 
 #EdStoryTitle{
@@ -6622,4 +6623,26 @@ background-color: rgb(235,137,69);
 
 #chartrow {
     
+}
+
+#titleheader {
+    padding-top:2.8em;
+    padding-bottom:.3em;
+    font-family: "helvetica neue";
+    font-size:3em; 
+    letter-spacing:.08em;
+    color:black;
+    font-weight: 100;
+    
+}
+
+#subhead {
+    padding-top:.2em;
+    padding-bottom:.2em;
+    text-transform: capitalize;
+    font-family: "helvetica neue";
+    font-size:1.5em; 
+    letter-spacing:.1em;
+    color:rgb(235,137,69);
+    font-weight: 100;   
 }
