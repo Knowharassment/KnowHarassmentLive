@@ -6613,13 +6613,13 @@ background-color: rgb(235,137,69);
 
 #datapage {
     margin: 5em 0 0 11em;
-    max-width: ;
 }
 
 #chart-container {
-    display: block;
     position: relative;
-    margin: 0 0 0 0;
-    max-width: ;
-    max-height: ;
+    margin: 0 auto 0 auto;
+}
+
+#chartrow {
+    
 }
