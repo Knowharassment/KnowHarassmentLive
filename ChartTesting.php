@@ -162,31 +162,62 @@ FusionCharts.ready(function(){
     </div><!-- /.navbar -->
       
 <!--Content Begins Here-->
-            <ul class="chartsidebar">
-                    <li>
-                        Police Reports
-                    </li>
-                    <li>
-                        Survey Results
-                        <ul id="nestedul">
-                            <li>
-                                Section One
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-      <div class="container" id="datapage">
-          <div class="row">
-              
-              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="chart-container">
+            <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 col-lg-3 col-xs-2 sidebar">
+            <div id="chartsidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Export</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Nav item</a></li>
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+            <li><a href="">More navigation</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+          </ul>
+            </div><!-- chartsidebar -->
+          </div>              
+              <div class="col-lg-8 col-md-10 col-sm-7 col-xs-7" id="chart-container">
                 Expect the Chart Here
               </div></div>
-      
-      </div>
-
-
-
-
+              <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="chartcontrol">
+                <fieldset>
+                    <legend>Chart Control:</legend>
+        <form method="get" action="ChartTesting.php" class="form-horizontal">
+            <label>What Happened?</label>
+                <select name="para1" size="1">
+                    <option selected value="">please choose...</option>
+                    <option value="SH">Sexual Harassment</option>
+                    <option value="SA">Sexual Assault</option>
+                    <option value="CH">Cyber-harassment</option>
+                </select>
+            <br>
+            <label>Break it down by:</label>
+                <select name="para2" size="1">
+                    <option selected value=""> please choose...</option>
+                    <option value="gender">Gender</option>
+                    <option value="age">Age</option>
+            
+            </select>
+            <br>
+            <input type="submit" value="submit">
+        </form>
+                    </fieldset>
+                    </div>
+        </div>
+        </div>
+          </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
