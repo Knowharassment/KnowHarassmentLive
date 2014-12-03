@@ -22,7 +22,7 @@
      }
      
      if ($issue=="CH"){
-        $y_label='Amount of cyber-harassment reported';
+        $y_label='Amount of cyber-harassment Reported';
      }
 
 // setting x-axis
@@ -38,6 +38,11 @@
      if ($demo=="age"){
         $x_label="Age of Respondents";
      }
+// Setting Caption
+    if($issue=="SH" && $demo=="gender"){
+        $caption="Cases of Sexual Harassment by Gender";
+    
+    }
 ?>
 <html lang="en">
   <head>
@@ -69,7 +74,7 @@ FusionCharts.ready(function(){
         dataFormat: "json",
         dataSource: {
             "chart": {
-                "caption": "Survey Test Chart",
+                "caption": "<?php echo $caption;?>",
                 "subCaption": "Subcaption",
         
                 "xAxisName": "<?php echo $x_label;?>",
@@ -87,22 +92,21 @@ FusionCharts.ready(function(){
 				
             },
             "data": [
-                <?php
-if($issue=="SH"){
-    if($demo=="gender"){
-$result=mysqli_query($link, "SELECT Q4.male, Q4.female, COUNT(Q16) FROM KnowHarassment_Results WHERE Q16='yes'") or die (mysql_error());
-    };
-};
-$total_num_rows=mysqli_num_rows($result);
-$current_row_num=1;
-while($row = mysqli_fetch_array($result)) {
-  if($current_row_num==$total_num_rows){
+<?php
+    // Sexual Harassment Charts
+    if($issue=="SH"){ 
+        if($demo=="gender"){
+            $result=mysqli_query($link, "SELECT Q4, COUNT(Q16) FROM KnowHarassment_Results WHERE Q16='yes' AND Q4='male'") or die (mysql_error());
+            $total_num_rows=mysqli_num_rows($result);
+            $current_row_num=1;
+            while($row = mysqli_fetch_array($result)) {
+            if($current_row_num==$total_num_rows){
 ?> 
                 {
                     "label": "<?php echo $row[0]; ?>",
                     "value": "<?php echo $row[1]; ?>",
                     "color": "#000066"
-                }
+                },
     <?php 
  } else {
     ?>
@@ -110,19 +114,44 @@ while($row = mysqli_fetch_array($result)) {
              "label": "<?php echo $row[0]; ?>",
              "value": "<?php echo $row[1]; ?>",
              "color": "#000066"
-          }
+          },
                 <?php    
   }
 $current_row_num=$current_row_num+1;
 };
+            $result=mysqli_query($link, "SELECT Q4, COUNT(Q16) FROM KnowHarassment_Results WHERE Q16='yes' AND Q4='female'") or die (mysql_error());
+            $total_num_rows=mysqli_num_rows($result);
+            $current_row_num=1;
+            while($row = mysqli_fetch_array($result)) {
+            if($current_row_num==$total_num_rows){
+?> 
+                {
+                    "label": "<?php echo $row[0]; ?>",
+                    "value": "<?php echo $row[1]; ?>",
+                    "color": "#000066"
+                },
+    <?php 
+ } else {
+    ?>
+          {  
+             "label": "<?php echo $row[0]; ?>",
+             "value": "<?php echo $row[1]; ?>",
+             "color": "#000066"
+          },
+                <?php    
+  };
+$current_row_num=$current_row_num+1;
+};   
+        };
+    }else{};
+// End of Sexual Harassment Charts
 ?>
-               
-                
-            ]
-        }
-    }).render("chart-container");
-
-});
+ ]
+      }
+ 
+  });
+  revenueChart.render("chart-container");
+}); 
 
 </script>
 
@@ -200,20 +229,9 @@ $current_row_num=$current_row_num+1;
             <input type="submit" value="submit">
         </form>
                     </fieldset>
-                    </div>
-                <table></table>
-                <?php
-    while($row = mysqli_fetch_array($result)) {
-  echo "<tr>";
-  echo "<td>" . $row[0] . "</td>";
-  echo "<td>" . $row[1] . "</td>";
-  echo "</tr>";
-};
-echo "</table>";
-?>
+                    </div></div></div>
         </div>
-        </div>
-          </div>
+        
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
