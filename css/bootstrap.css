@@ -6333,11 +6333,7 @@ h4{
 
 
 .harassmentheader{
-	Text-align: Left;
-	background-color: RGB(235,137,69);
-    margin-top: 5em;
-    padding: 2em 2em 2em 5em;
-    <!--Just enter image URL background: url() no-repeat center center fixed;
+  background: url(http://www.kentstatehotel.com/files/1244/Campus_Header.jpg) no-repeat center center fixed;
   display: table;
   height: 100%;
   position: relative;
@@ -6345,8 +6341,12 @@ h4{
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;-->
-    
+  background-size: cover;
+	Text-align: Left;
+	<!--background-color: RGB(235,137,69);-->
+    margin-top: 5em;
+    padding: 2em 2em 2em 5em;
+       
 }
 
 .harassmenttext{
