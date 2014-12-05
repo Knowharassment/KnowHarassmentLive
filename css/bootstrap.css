@@ -6337,6 +6337,15 @@ h4{
 	background-color: RGB(235,137,69);
     margin-top: 5em;
     padding: 2em 2em 2em 5em;
+    <!--Just enter image URL background: url() no-repeat center center fixed;
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;-->
     
 }
 
@@ -6350,6 +6359,15 @@ h4{
     width: 100%;
     display: inline-block;
     position: relative;
+    <!--Just enter image URL background: url() no-repeat center center fixed;
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;-->
 
 }
 .infoheader{
@@ -6367,14 +6385,30 @@ h4{
     width: 100%;
     display: inline-block;
     position: relative;
-	
+	<!--Just enter image URL background: url() no-repeat center center fixed;
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;-->
 }
 
 .survey{
     background-color: RGB(235,137,69);
     display: block;
     padding: 2em 2em 2em 5em;
-
+<!--Just enter image URL background: url() no-repeat center center fixed;
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;-->
  
  }
 
