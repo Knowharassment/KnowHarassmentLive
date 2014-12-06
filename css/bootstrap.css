@@ -6708,3 +6708,33 @@ background-color: rgb(235,137,69);
 .chartContainer {
     margin: 0 auto 0 auto;
 }
+
+#sidebar {
+    float:right;
+    background-color:rgb(190, 227, 230);
+    padding:1.5em;
+    border-color: rgb(42,62,64);
+}
+
+#sidebarhead {
+    font-family: "helvetica neue";
+    font-weight:300;
+    text-transform:uppercase;
+    color: rgb(42,62,64);
+    letter-spacing:1.3px;
+    text-align: left;   
+    font-size:12px;   
+    line-height: 180%;
+    padding-bottom: 1em;
+    padding-top:1.5em;
+}
+
+#sidebartext {
+    font-size: 12px;
+    font-family: "helvetica neue";
+    margin-left:-2em;
+    line-height: 190%;
+    letter-spacing:.2px;
+    font-weight: 200;
+    color:rgb(42,62,64);
+}
