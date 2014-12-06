@@ -50,6 +50,23 @@ body {
     max-width: 12em;
   }
 }
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    height: 100%;  
+    top: 0em;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 4em 1em 1em 1em;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: rgb(190,227,230);
+    border-right: 1px solid #eee;
+    max-width: 8em;
+  }
+}
 
 /* Sidebar navigation */
 .nav-sidebar {
@@ -84,6 +101,10 @@ body {
     padding-right: 40px;
     padding-left: 40px;
   }
+    #datapagecontainer {
+    padding: 6em 6em 2em 12em;
+    background-color:rgb(250,250,250);
+}
 }
 .main .page-header {
   margin-top: 0;
@@ -123,7 +144,4 @@ body {
     font-style: normal;
 }
 
-#datapagecontainer {
-    padding: 6em 6em 2em 12em;
-    background-color:rgb(250,250,250);
-}
+
