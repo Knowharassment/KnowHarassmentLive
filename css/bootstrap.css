@@ -6287,11 +6287,11 @@ button.close {
 #navbarlogo {
     display: block;
     position: relative;
-    height: 1.3em;
+    height: 1.2em;
     clear: both;
     float:left;
     align-items: center;
-    padding-left:3em;
+    padding-left:2.8em;
     margin-top: .6em;
 }
 
