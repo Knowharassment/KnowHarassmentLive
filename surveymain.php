@@ -199,7 +199,7 @@ $current_row_num=$current_row_num+1;
               KnowHarassment's Database
               <hr style="color: black;">
             </p>
-            <ul class="nav nav-sidebar">
+            <ul class="nav-sidebar">
             <li class="active"><a href="surveymain.php" style="text-color: black;">Survey Data</a></li>
             <li><a href="knowharassmentatksu.html" style="color: black;">Crime Data</a></li>
             </ul>
