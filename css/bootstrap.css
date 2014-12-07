@@ -6335,7 +6335,7 @@ h4{
 .harassmentheader{
   background: url(http://www.kentstatehotel.com/files/1244/Campus_Header.jpg) no-repeat center center fixed;
   display: table;
-  height: 100%;
+  height: 50em;
   position: relative;
   width: 100%;
   -webkit-background-size: cover;
@@ -6486,7 +6486,7 @@ h4{
 background-color: rgb(235,137,69);
     position: relative;
     margin-left: ;
-    margin-right: auto;
+    margin-right:10em;
 }
 
 #footer{
