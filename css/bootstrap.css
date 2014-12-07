@@ -174,7 +174,7 @@ input[type="search"]::-webkit-search-decoration {
 }
 fieldset {
   padding: .35em .625em .75em;
-  margin: 0 2px;
+  margin: 0 auto 0 2em;
   border: 1px solid #c0c0c0;
 }
 legend {
@@ -6692,8 +6692,8 @@ background-color: rgb(235,137,69);
 .chartcontrol {
     display: block;
     position: relative;
-    margin: 0 0 0 0;
-    padding: 2em auto 0 auto;
+    margin: 0 auto 0 auto;
+    padding: 2em auto 0 2em;
 }
 
 .crimebutton {
