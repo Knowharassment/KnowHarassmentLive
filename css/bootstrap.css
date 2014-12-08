@@ -6517,7 +6517,7 @@ background-color: rgb(235,137,69);
 }
 
 #storiespagecontainer {
-    padding: 2em 2em 2em 2em;
+    padding: 2em 2em 2em 0;
     background-color:rgb(250,250,250)
 }
 .marker {
@@ -6710,9 +6710,9 @@ background-color: rgb(235,137,69);
 }
 
 #sidebar {
-    float:right;
+    position: relative;
     background-color:rgb(190, 227, 230);
-    padding:2em;
+    padding:14em 1em 2em 1em;
     border-color: rgb(42,62,64);
     
 }
@@ -6731,12 +6731,13 @@ background-color: rgb(235,137,69);
 }
 
 #sidebartext {
-    font-size: 12px;
-    font-family: "helvextica neue";
-    margin-left:-2em;
+    position: relative;
+    font-size: 11px;
+    font-family: "helvetica neue";
+    padding: 0 1em 0 1em;
     line-height: 190%;
     letter-spacing:.2px;
     font-weight: 200;
     color:rgb(42,62,64);
-    text-align: center;
+    text-align: left;
 }
