@@ -6324,7 +6324,7 @@ h4{
 .harassmentheader{
   background: url(http://i.imgur.com/VBFgAz0.jpg) no-repeat center center fixed;
   display: table;
-  height: 50em;
+  height: 43em;
   position: relative;
   width: 100%;
   -webkit-background-size: cover;
@@ -6763,7 +6763,7 @@ h4{
     font-family: "helvetica neue";
     font-weight:500;
     letter-spacing:2px;
-    text-align: center;   
+    text-align: left;   
     font-size:55px;
     line-height: 180%;
     padding-bottom: 1em;
@@ -6813,14 +6813,14 @@ h4{
 
 #infographictext {
     position: relative;
-    font-size: 11px;
+    font-size: 16px;
     font-family: "helvetica neue";
     padding: 0 1em 0 1em;
     line-height: 190%;
     letter-spacing:.2px;
     font-weight: 200;
     color:rgb(42,62,64);
-    text-align: center;
+    text-align: center; 
 }
 
 
@@ -6850,4 +6850,51 @@ h4{
 	<!--background-color: RGB(235,137,69);-->
     margin-top: 5em;
     padding: 2em 2em 2em 5em;
+}
+
+.OurGoal {
+        width: 100%;
+    display: inline-block;
+    position: relative;
+    background: url(http://i.imgur.com/gyHnv1J.jpg) no-repeat center center fixed;
+  display: table;
+  height: 50em;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    padding:2em;
+}
+
+#ourmissiontext {
+        position: relative;
+    font-size: 20px;
+    font-family: "helvetica neue";
+    padding: 0 1em 0 1em;
+    line-height: 190%;
+    letter-spacing:.2px;
+    font-weight: 200;
+    color:rgb(42,62,64);
+    text-align:left;
+    padding-right: 20em;
+    padding-top:3em;
+}
+
+#surveyslide {
+            width: 100%;
+    display: inline-block;
+    position: relative;
+    background: url(http://i.imgur.com/SjOgdum.jpg) no-repeat center center fixed;
+  display: table;
+  height: 50em;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    padding:2em;
+}
 }
