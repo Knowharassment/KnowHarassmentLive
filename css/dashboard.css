@@ -71,11 +71,8 @@ body {
 /* Sidebar navigation */
 .nav-sidebar {
     list-style: none;
-    position: inherit;
+    position: relative;
     display:block;
-    margin-right: -10em; /* 20px padding + 1px border */
-    margin-bottom: 20px;
-    margin-left: -20px;
     color: black;
     
 }
