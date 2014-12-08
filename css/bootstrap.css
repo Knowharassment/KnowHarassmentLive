@@ -6333,7 +6333,7 @@ h4{
 
 
 .harassmentheader{
-  background: url(http://www.kentstatehotel.com/files/1244/Campus_Header.jpg) no-repeat center center fixed;
+  background: url(https://dl.dropboxusercontent.com/u/39907471/orangeback.jpg) no-repeat center center fixed;
   display: table;
   height: 50em;
   position: relative;
@@ -6712,8 +6712,9 @@ background-color: rgb(235,137,69);
 #sidebar {
     float:right;
     background-color:rgb(190, 227, 230);
-    padding:1.5em;
+    padding:2em;
     border-color: rgb(42,62,64);
+    
 }
 
 #sidebarhead {
@@ -6722,7 +6723,7 @@ background-color: rgb(235,137,69);
     text-transform:uppercase;
     color: rgb(42,62,64);
     letter-spacing:1.3px;
-    text-align: left;   
+    text-align: center;   
     font-size:12px;   
     line-height: 180%;
     padding-bottom: 1em;
@@ -6731,10 +6732,11 @@ background-color: rgb(235,137,69);
 
 #sidebartext {
     font-size: 12px;
-    font-family: "helvetica neue";
+    font-family: "helvextica neue";
     margin-left:-2em;
     line-height: 190%;
     letter-spacing:.2px;
     font-weight: 200;
     color:rgb(42,62,64);
+    text-align: center;
 }
