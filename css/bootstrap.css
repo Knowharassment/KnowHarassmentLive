@@ -6741,3 +6741,26 @@ background-color: rgb(235,137,69);
     color:rgb(42,62,64);
     text-align: left;
 }
+
+#piechart-container {
+    position: relative;
+    display: block;
+    margin:0 0 0 0;
+    padding: 3em 1em 1em 1em;
+    height: 70%;
+    width: 100%;
+    max-width: 50em;
+    max-height: 70em;
+}
+
+#indicatorDiv {
+    position: relative;
+    display: block;
+    float: right;
+    margin:0 0 0 0;
+    padding: 3em 1em 1em 1em;
+    height: 70%;
+    width: 100%;
+    max-width: 50em;
+    max-height: 70em;
+}

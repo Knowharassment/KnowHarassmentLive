@@ -1,6 +1,7 @@
 <?php
      require('dbconnect.php');
      require('sanitize.php');
+    require('ColorSwatches.php');
      error_reporting(-1);
      error_reporting(E_ALL ^ E_NOTICE);
      
@@ -106,13 +107,15 @@ FusionCharts.ready(function(){
             $result=mysqli_query($link, "SELECT Q4, COUNT(Q16) FROM KnowHarassment_Results WHERE Q16='yes' AND Q4='male'") or die (mysql_error());
             $total_num_rows=mysqli_num_rows($result);
             $current_row_num=1;
+            $color=0;
             while($row = mysqli_fetch_array($result)) {
+                
             if($current_row_num==$total_num_rows){
 ?> 
                 {
                     "label": "<?php echo $row[0]; ?>",
                     "value": "<?php echo $row[1]; ?>",
-                    "color": "#000066"
+                    "color": "<?php echo $color_array[$color]; ?>"
                 },
     <?php 
  } else {
@@ -120,22 +123,25 @@ FusionCharts.ready(function(){
           {  
              "label": "<?php echo $row[0]; ?>",
              "value": "<?php echo $row[1]; ?>",
-             "color": "#000066"
+             "color": "<?php echo $color_array[$color]; ?>"
           },
                 <?php    
   };
+$color=$color++;
 $current_row_num=$current_row_num+1;
 };
             $result=mysqli_query($link, "SELECT Q4, COUNT(Q16) FROM KnowHarassment_Results WHERE Q16='yes' AND Q4='female'") or die (mysql_error());
             $total_num_rows=mysqli_num_rows($result);
             $current_row_num=1;
+            $color=0;
             while($row = mysqli_fetch_array($result)) {
+                
             if($current_row_num==$total_num_rows){
 ?> 
                 {
                     "label": "<?php echo $row[0]; ?>",
                     "value": "<?php echo $row[1]; ?>",
-                    "color": "#000066"
+                    "color": "<?php echo $color_array[$color]; ?>"
                 },
     <?php 
  } else {
@@ -143,10 +149,11 @@ $current_row_num=$current_row_num+1;
           {  
              "label": "<?php echo $row[0]; ?>",
              "value": "<?php echo $row[1]; ?>",
-             "color": "#000066"
+             "color": "<?php echo $color_array[$color]; ?>"
           },
                 <?php    
   };
+$color=$color++;
 $current_row_num=$current_row_num+1;
 };   
     //end SH by gender
@@ -158,6 +165,7 @@ $current_row_num=$current_row_num+1;
             $result=mysqli_query($link, "SELECT Q5, COUNT(Q16) FROM KnowHarassment_Results WHERE Q16='yes' AND Q5=$a") or die (mysql_error());
             $total_num_rows=mysqli_num_rows($result);
             $current_row_num=1;
+            $color=0;
             while($row = mysqli_fetch_array($result)) {
                 //skipping empty values
                 if($row[1]==0){
@@ -167,20 +175,21 @@ $current_row_num=$current_row_num+1;
                         {
                             "label": "<?php echo $row[0]; ?>",
                             "value": "<?php echo $row[1]; ?>",
-                            "color": "#000066"
+                            "color": "<?php echo $color_array[$color]; ?>"
                         },
                     <?php
                         } else { ?>
                         {  
                         "label": "<?php echo $row[0]; ?>",
                         "value": "<?php echo $row[1]; ?>",
-                        "color": "#000066"
+                        "color": "<?php echo $color_array[$color]; ?>"
                         },
                     <?php
                         };
                 };
                     
                 $current_row_num=$current_row_num+1;
+$color=$color++;
             };
         if($a==80){
             break;
@@ -197,13 +206,15 @@ $current_row_num=$current_row_num+1;
             $result=mysqli_query($link, "SELECT Q4, COUNT(Q10) FROM KnowHarassment_Results WHERE Q10='yes' AND Q4='male'") or die (mysql_error());
             $total_num_rows=mysqli_num_rows($result);
             $current_row_num=1;
+            $color=0;
             while($row = mysqli_fetch_array($result)) {
+                
             if($current_row_num==$total_num_rows){
 ?> 
                 {
                     "label": "<?php echo $row[0]; ?>",
                     "value": "<?php echo $row[1]; ?>",
-                    "color": "#000066"
+                    "color": "<?php echo $color_array[$color]; ?>"
                 },
     <?php 
  } else {
@@ -211,22 +222,25 @@ $current_row_num=$current_row_num+1;
           {  
              "label": "<?php echo $row[0]; ?>",
              "value": "<?php echo $row[1]; ?>",
-             "color": "#000066"
+             "color": "<?php echo $color_array[$color]; ?>"
           },
                 <?php    
   };
+$color=$color++;
 $current_row_num=$current_row_num+1;
 };
             $result=mysqli_query($link, "SELECT Q4, COUNT(Q10) FROM KnowHarassment_Results WHERE Q10='yes' AND Q4='female'") or die (mysql_error());
             $total_num_rows=mysqli_num_rows($result);
             $current_row_num=1;
+            $color=0;
             while($row = mysqli_fetch_array($result)) {
+                
             if($current_row_num==$total_num_rows){
 ?> 
                 {
                     "label": "<?php echo $row[0]; ?>",
                     "value": "<?php echo $row[1]; ?>",
-                    "color": "#000066"
+                    "color": "<?php echo $color_array[$color]; ?>"
                 },
     <?php 
  } else {
@@ -234,10 +248,11 @@ $current_row_num=$current_row_num+1;
           {  
              "label": "<?php echo $row[0]; ?>",
              "value": "<?php echo $row[1]; ?>",
-             "color": "#000066"
+             "color": "<?php echo $color_array[$color]; ?>"
           },
                 <?php    
   };
+$color=$color++;
 $current_row_num=$current_row_num+1;
 };   
     //end SA by gender
@@ -289,13 +304,15 @@ $current_row_num=$current_row_num+1;
             $result=mysqli_query($link, "SELECT Q4, COUNT(Q22) FROM KnowHarassment_Results WHERE Q22='yes' AND Q4='male'") or die (mysql_error());
             $total_num_rows=mysqli_num_rows($result);
             $current_row_num=1;
+            $color=0;
             while($row = mysqli_fetch_array($result)) {
+                
             if($current_row_num==$total_num_rows){
 ?> 
                 {
                     "label": "<?php echo $row[0]; ?>",
                     "value": "<?php echo $row[1]; ?>",
-                    "color": "#000066"
+                    "color": "<?php echo $color_array[$color]; ?>"
                 },
     <?php 
  } else {
@@ -303,22 +320,25 @@ $current_row_num=$current_row_num+1;
           {  
              "label": "<?php echo $row[0]; ?>",
              "value": "<?php echo $row[1]; ?>",
-             "color": "#000066"
+             "color": "<?php echo $color_array[$color]; ?>"
           },
                 <?php    
   };
+$color=$color++;
 $current_row_num=$current_row_num+1;
 };
             $result=mysqli_query($link, "SELECT Q4, COUNT(Q22) FROM KnowHarassment_Results WHERE Q22='yes' AND Q4='female'") or die (mysql_error());
             $total_num_rows=mysqli_num_rows($result);
             $current_row_num=1;
+            $color=0;
             while($row = mysqli_fetch_array($result)) {
+                
             if($current_row_num==$total_num_rows){
 ?> 
                 {
                     "label": "<?php echo $row[0]; ?>",
                     "value": "<?php echo $row[1]; ?>",
-                    "color": "#000066"
+                    "color": "<?php echo $color_array[$color]; ?>"
                 },
     <?php 
  } else {
@@ -326,10 +346,11 @@ $current_row_num=$current_row_num+1;
           {  
              "label": "<?php echo $row[0]; ?>",
              "value": "<?php echo $row[1]; ?>",
-             "color": "#000066"
+             "color": "<?php echo $color_array[$color]; ?>"
           },
                 <?php    
   };
+$color=$color++;
 $current_row_num=$current_row_num+1;
 };   
     //end SH by gender
@@ -410,13 +431,15 @@ FusionCharts.ready(function () {
             $result=mysqli_query($link, "SELECT Q4, COUNT(Q16) FROM KnowHarassment_Results WHERE Q16='yes' AND Q4='male'") or die (mysql_error());
             $total_num_rows=mysqli_num_rows($result);
             $current_row_num=1;
+            $color=0;
             while($row = mysqli_fetch_array($result)) {
+                
             if($current_row_num==$total_num_rows){
 ?> 
                 {
                     "label": "<?php echo $row[0]; ?>",
                     "value": "<?php echo $row[1]; ?>",
-                    "color": "#000066"
+                    "color": "<?php echo $color_array[$color]; ?>"
                 },
     <?php 
  } else {
@@ -424,10 +447,11 @@ FusionCharts.ready(function () {
           {  
              "label": "<?php echo $row[0]; ?>",
              "value": "<?php echo $row[1]; ?>",
-             "color": "#000066"
+             "color": "<?php echo $color_array[$color]; ?>"
           },
                 <?php    
   };
+$color=$color++;
 $current_row_num=$current_row_num+1;
 };
             $result=mysqli_query($link, "SELECT Q4, COUNT(Q16) FROM KnowHarassment_Results WHERE Q16='yes' AND Q4='female'") or die (mysql_error());
@@ -761,10 +785,10 @@ $current_row_num=$current_row_num+1;
         </div>
 
             <br>
-            <div id="subhead">The Survey Overview</div>
+            
                 
             <p>We wanted to learn as much as possible about harassment issues here at Kent State. In October we distrubited a survey in an attempt to get answers straight from the student body. The responses that we've recieved have vindicated our mission. Below, you'll have a chance to see the responses in many ways.
-                <br><Br>
+                <br><br><br><div id="subhead">The Survey Overview</div><br>
 <strong>
 Below you can see who responded to our survey. 
 </strong>
@@ -775,13 +799,14 @@ Below you can see who responded to our survey.
             <div class="chart-container" id="chart-container">
                       Please excuse our dust
                       </div></div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="piechart-container">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="chart-container" id="piechart-container">
                     expect the pie chart
                 </div></div>
-                <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="indicatorDiv">   
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="indicatorDiv" id="indicatorDiv">   
                 Hover over pieces of the pie for more information.
-                </div>
+                </div></div>
             </div>
       </div><!-- pagecontainer -->
       <hr>
