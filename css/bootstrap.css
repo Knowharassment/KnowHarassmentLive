@@ -6764,10 +6764,10 @@ h4{
     font-weight:500;
     letter-spacing:2px;
     text-align: center;   
-    font-size:75px;
+    font-size:55px;
     line-height: 180%;
-    padding-bottom: 1.4em;
-    padding-top:.1em;
+    padding-bottom: 1em;
+    padding-top:0;
     color:white;
     text-shadow: 1px;
 }
@@ -6790,9 +6790,8 @@ h4{
     font-weight:100;
     letter-spacing:.1em;
     text-align: left; 
-    font-size:48px;
-    line-height: 180%;
-    padding-bottom: .1em;
+    font-size:28px;
+    padding-bottom:0;
     padding-top:1.5em;
     color:white;
 
@@ -6836,3 +6835,19 @@ h4{
 
 }
 
+
+#howdoiknow {
+  background: url(http://i.imgur.com/UmTafK0.jpg) no-repeat center center fixed;
+  display: table;
+  height: 50em;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	Text-align: Left;
+	<!--background-color: RGB(235,137,69);-->
+    margin-top: 5em;
+    padding: 2em 2em 2em 5em;
+}
