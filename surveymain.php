@@ -771,9 +771,10 @@ Below you can see who responded to our survey.
 </p>
             </div></div>
             <div class="row" style="max-height: 30em;">
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="chart-container">
-                Expect the Chart Here
-              </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="chart-container" id="chart-container">
+                      Please excuse our dust
+                      </div></div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="piechart-container">
                     expect the pie chart
                 </div></div>
