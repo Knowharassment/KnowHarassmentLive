@@ -2,15 +2,17 @@
      require('dbconnect.php');
      require('sanitize.php');
     require('ColorSwatches.php');
-     //error_reporting(-1);
-     //error_reporting(E_ALL ^ E_NOTICE);
+     error_reporting(-1);
+     error_reporting(E_ALL ^ E_NOTICE);
      
 //initialize graph variables from <form>
      $issue=$_GET['para1'];
      $demo=$_GET['para2'];
 
 // Setting Chart display parameters including Captions and labels
-    $issue="CH"
+    if ($issue==""){
+        $issue="CH";
+    };
     if ($demo==""){
         $demo="gender";
     };
@@ -36,7 +38,7 @@
         };
     }elseif($issue=="CH"){
         $caption="Cases of Cyber-Harassment";
-        $y_label='Amount of cyber-harassment Reported';
+        $y_label='Number of cyberharassment cases reported';
         if($demo=="gender"){
             $subcaption="by gender";
             $x_label="Gender of Respondents";
@@ -76,7 +78,6 @@
             $y_label="Total Responses";
             $x_label="Sexual Orientation";
         };
-    
 //End chart labeling
 ?>
 
@@ -131,9 +132,7 @@ FusionCharts.ready(function(){
 <?php
 // Begin Chart selection logic
 // Sexual Harassment Charts
-$color=0;
 // End of Sexual Assault Charts
-
 // Cyber Harassment Charts
     if($issue=="CH"){ 
         //By Gender
@@ -234,7 +233,7 @@ $current_row_num=$current_row_num+1;
 
     ?>
     ]
-        },
+        }
   });
 revenueChart.render("chart-container");
 }); 
@@ -280,7 +279,7 @@ revenueChart.render("chart-container");
             <ul class="nav nav-sidebar">
                 <hr style="color: black;">
             <li><a href="surveymain.php" style="color: black;">Survey Overview</a></li>
-                    <li class="active"><a href="surveyresultsch.php" style="color: black;">Cyber-Harassment</a></li>
+                    <li class="active"><a href="surveyresultsch.php" style="color: black;">Cyberharassment</a></li>
                     <li><a href="surveyresultssh.php" style="color: black;">Sexual Harassment</a></li>
                     <li><a href="surveyresultssa.php" style="color: black;">Sexual Assault</a></li>
                 <hr>
@@ -295,29 +294,17 @@ revenueChart.render("chart-container");
             <br>
             <div id="subhead">Cyberharassment</div>
                 
-            <p>We wanted to learn as much as possible about harassment issues here at Kent State. In October we distrubited a survey in an attempt to get answers straight from the student body. The responses that we've recieved have vindicated our mission. Below, you'll have a chance to see the responses in many ways.
+            <p>To learn more about how cyberharassment and other sex crimes affect Kent State’s student body, we distributed a survey in an attempt to get answers straight from the student body. Below is a visualization of the responses
                 <br><Br>
 <strong>
-Below you can choose which harassment issue you'd like to explore. You can also choose to view the data in different ways. 
+Choose below which issue you'd like to explore. You can also choose to view the data in different ways.
 </strong>
 </p>
             </div></div>
-            <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="chart-container">
-                Expect the Chart Here
-              </div></div>
-            <div class="row">
-                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id="piechart-container">
-                    expect the pie chart
-                </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" id="indicatorDiv">
-                    expect the pie chart
-                </div>
-            </div>
-            <div class="row chartcontrol">
+                <div class="row chartcontrol">
                 <fieldset>
                     <legend>Chart Control:</legend>
-        <form method="get" action="surveymain.php" class="form-horizontal">
+        <form method="get" action="surveyresultsch.php" class="form-horizontal">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <label>What Happened?</label>
             <input type="radio" name="para1" value="CH">Cyberharassment
@@ -346,16 +333,24 @@ Below you can choose which harassment issue you'd like to explore. You can also 
         </form>
                     </fieldset>
                     </div>
-                </div><!-- chartcontrol -->
+            <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="chart-container">
+                Expect the Chart Here
+              </div></div>
+            <hr>
+<div id="footer">
+    KnowHarassment 2014 © 
+    &nbsp; &nbsp; 
+    <a href="index.html">Home &nbsp;</a>|&nbsp;
+    <a href="about.html">About Us &nbsp;</a>|&nbsp;
+    <a href="editorials.html">Stories &nbsp;</a>|&nbsp; 
+    <a href="knowharassmentatksu.html">Our Data&nbsp;</a>|&nbsp;
+     <a href="TermsofUse.html">Terms of Use 
+<br><Br>
+<br><Br>
+         </div>
             </div><!-- pagecontainer -->
-      <hr>
-
-         <div id="footer">
-    KnowHarassment 2014. © &nbsp; &nbsp; <A href="TermsofUse.html">Terms of use.</a>
-      </div>
-    
-        </div>
-        </div>
+      
         
     <!-- Bootstrap core JavaScript
     ================================================== -->

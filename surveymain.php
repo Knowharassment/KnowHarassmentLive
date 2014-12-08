@@ -960,7 +960,7 @@ revenueChart.render("chart-container");
             <ul class="nav nav-sidebar">
                 <hr style="color: black;">
             <li class="active"><a href="surveymain.php" style="color: black;">Survey Overview</a></li>
-                    <li><a href="surveyresultsch.php" style="color: black;">Cyber-Harassment</a></li>
+                    <li><a href="surveyresultsch.php" style="color: black;">Cyberharassment</a></li>
                     <li><a href="surveyresultssh.php" style="color: black;">Sexual Harassment</a></li>
                     <li><a href="surveyresultssa.php" style="color: black;">Sexual Assault</a></li>
                 <hr>
@@ -975,7 +975,7 @@ revenueChart.render("chart-container");
             <br>
             
                 
-            <p>We wanted to learn as much as possible about harassment issues here at Kent State. In October we distrubited a survey in an attempt to get answers straight from the student body. The responses that we've recieved have vindicated our mission. Below, you'll have a chance to see the responses in many ways.
+            <p>To learn more about how cyberharassment and other sex crimes affect Kent State’s student body, we distributed a survey in an attempt to get answers straight from the student body. Below is a visualization of the responses
                 <br><br><br><div id="subhead">The Survey Overview</div><br>
 <strong>
 Below you can see who responded to our survey. Choose how you'd like to see our respondents catergorized. 
@@ -1036,12 +1036,19 @@ Below you can see who responded to our survey. Choose how you'd like to see our 
                 Hover over pieces of the pie for more information.
                 </div></div>-->
             </div>
+<hr>
+<div id="footer">
+    KnowHarassment 2014 © 
+    &nbsp; &nbsp; 
+    <a href="index.html">Home &nbsp;</a>|&nbsp;
+    <a href="about.html">About Us &nbsp;</a>|&nbsp;
+    <a href="editorials.html">Stories &nbsp;</a>|&nbsp; 
+    <a href="knowharassmentatksu.html">Our Data&nbsp;</a>|&nbsp;
+     <a href="TermsofUse.html">Terms of Use 
+<br><Br>
+<br><Br>
+         </div>
       </div><!-- pagecontainer -->
-      <hr>
-
-         <div id="footer">
-    KnowHarassment 2014. © &nbsp; &nbsp; <A href="TermsofUse.html">Terms of use.</a>
-      </div>
     
         
     <!-- Bootstrap core JavaScript
