@@ -738,19 +738,21 @@ $current_row_num=$current_row_num+1;
 <!--Content Begins Here-->
             <div class="container-fluid" id="datapagecontainer">
       <div class="row">
-        <div class="col-sm-4 col-md-2 col-lg-2 col-xs-4 sidebar">
+        <div class="col-sm-4 col-md-3 col-lg-3 col-xs-4 sidebar">
           <p id="chartsidebartitle">
-              KnowHarassment's Database
-              <hr style="color: black;">
+              The<br>
+              <strong>KnowHarassment</strong><br>
+              Database
             </p>
+            
             <ul class="nav nav-sidebar">
-            <li class="active"><a href="surveymain.php" style="text-color: black;">Survey Data</a></li>
-                <ul class="nav nav-sidebar">
-                    <li><a href="surveyresultsch.php" style="color: black;">Cyber-harassment Data</a></li>
+                <hr style="color: black;">
+            <li class="active"><a href="surveymain.php" style="color: black;">Survey Overview</a></li>
+                    <li><a href="surveyresultsch.php" style="color: black;">Cyber-Harassment</a></li>
                     <li><a href="surveyresultssh.php" style="color: black;">Sexual Harassment</a></li>
                     <li><a href="surveyresultssa.php" style="color: black;">Sexual Assault</a></li>
-                </ul>
-            <li><a href="knowharassmentatksu.html" style="color: black;">Crime Data</a></li>
+                <hr>
+            <li><a href="knowharassmentatksu.html" style="color: black;">KSU Crime Data</a></li>
             </ul>
           </div>
                 <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12" style="padding: 0 0 0 3em;">
