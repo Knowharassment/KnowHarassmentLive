@@ -1,3 +1,85 @@
+<?php
+     require('dbconnect.php');
+     require('sanitize.php');
+    require('ColorSwatches.php');
+     //error_reporting(-1);
+     //error_reporting(E_ALL ^ E_NOTICE);
+     
+//initialize graph variables from <form>
+     $issue=$_GET['para1'];
+     $demo=$_GET['para2'];
+
+// Setting Chart display parameters including Captions and labels
+    $issue="CH"
+    if ($demo==""){
+        $demo="gender";
+    };
+    if($issue=="SH"){
+        $caption="Cases of Sexual Harassment";
+        $y_label='Amount of Sexual Harassment Reported';
+        if($demo=="gender"){
+            $subcaption="by gender";
+            $x_label="Gender of Respondents";
+        } elseif ($demo=="age"){
+            $subcaption="by age";
+            $x_label="Age of Respondents";
+        };
+    }elseif($issue=="SA"){
+        $caption="Cases of Sexual Assault";
+        $y_label='Amount of Sexual Assault Reported';
+        if($demo=="gender"){
+            $subcaption="by gender";
+            $x_label="Gender of Respondents";
+        } elseif ($demo=="age"){
+            $subcaption="by age";
+            $x_label="Age of Respondents";
+        };
+    }elseif($issue=="CH"){
+        $caption="Cases of Cyber-Harassment";
+        $y_label='Amount of cyber-harassment Reported';
+        if($demo=="gender"){
+            $subcaption="by gender";
+            $x_label="Gender of Respondents";
+        } elseif ($demo=="age"){
+            $subcaption="by age";
+            $x_label="Age of Respondents";
+        };
+    };
+        if($issue=="TN"){
+            $caption="Total Number of Responses";
+            $subcaption="By Total Count";
+            $y_label="Total Responses";
+            $x_label="Total Responses";
+        }elseif($issue=="TG"){
+            $caption="Total Number of Responses";
+            $subcaption="By Gender";
+            $y_label="Total Responses";
+            $x_label="Gender";
+        }elseif($issue=="TA"){
+            $caption="Total Number of Responses";
+            $subcaption="By Age";
+            $y_label="Total Responses";
+            $x_label="Age";
+        }elseif($issue=="TSY"){
+            $caption="Total Number of Responses";
+            $subcaption="By Academic Level";
+            $y_label="Total Responses";
+            $x_label="Academic Level";
+        }elseif($issue=="TE"){
+            $caption="Total Number of Responses";
+            $subcaption="By Ethnicity";
+            $y_label="Total Responses";
+            $x_label="Ethnicity";
+        }elseif($issue==    "TSO"){
+            $caption="Total Number of Responses";
+            $subcaption="By Sexual Orientation";
+            $y_label="Total Responses";
+            $x_label="Sexual Orientation";
+        };
+    
+//End chart labeling
+?>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -17,6 +99,146 @@
     <link href="css/dashboard.css" rel="stylesheet">
       <script type="text/javascript" src="fusioncharts/fusioncharts.js"></script>
 <script type="text/javascript" src="fusioncharts/themes/fusioncharts.theme.fint.js"></script>
+<script type="text/javascript">
+
+FusionCharts.ready(function(){
+    var revenueChart = new FusionCharts({
+        type: "column2d",
+        renderAt: "chart-container",
+        width: "100%",
+        height: "300px",
+        dataFormat: "json",
+        dataSource: {
+            "chart": {
+                "caption": "<?php echo $caption;?>",
+                "subCaption": "<?php echo $subcaption;?>",
+        
+                "xAxisName": "<?php echo $x_label;?>",
+                "yAxisName": "<?php echo $y_label;?>",
+                
+				"canvasBgAlpha": "0",
+                "showAlternateHgridColor": "1",
+				"captionFontSize": "16",
+				"subcaptionFontSize": "14",
+				"outCnvBaseFont": "helvetica",
+				"outCnvbaseFontSize": "11",
+				"outCnvbaseFontColor": "#000000",
+				"valueFontColor": "#ffffff",
+                "theme": "fint",
+				
+            },
+            "data": [
+<?php
+// Begin Chart selection logic
+// Sexual Harassment Charts
+$color=0;
+// End of Sexual Assault Charts
+
+// Cyber Harassment Charts
+    if($issue=="CH"){ 
+        //By Gender
+        if($demo=="gender"){
+            $result=mysqli_query($link, "SELECT Q4, COUNT(Q22) FROM KnowHarassment_Results WHERE Q22='yes' AND Q4='male'") or die (mysql_error());
+            $total_num_rows=mysqli_num_rows($result);
+            $current_row_num=1;
+            $color=0;
+            while($row = mysqli_fetch_array($result)) {
+                
+            if($current_row_num==$total_num_rows){
+?> 
+                {
+                    "label": "<?php echo $row[0]; ?>",
+                    "value": "<?php echo $row[1]; ?>",
+                    "color": "<?php echo $color_array[$color]; ?>"
+                },
+    <?php 
+ } else {
+    ?>
+          {  
+             "label": "<?php echo $row[0]; ?>",
+             "value": "<?php echo $row[1]; ?>",
+             "color": "<?php echo $color_array[$color]; ?>"
+          },
+                <?php    
+  };
+$color=$color++;
+$current_row_num=$current_row_num+1;
+};
+            $result=mysqli_query($link, "SELECT Q4, COUNT(Q22) FROM KnowHarassment_Results WHERE Q22='yes' AND Q4='female'") or die (mysql_error());
+            $total_num_rows=mysqli_num_rows($result);
+            $current_row_num=1;
+            $color=0;
+            while($row = mysqli_fetch_array($result)) {
+                
+            if($current_row_num==$total_num_rows){
+?> 
+                {
+                    "label": "<?php echo $row[0]; ?>",
+                    "value": "<?php echo $row[1]; ?>",
+                    "color": "<?php echo $color_array[$color]; ?>"
+                },
+    <?php 
+ } else {
+    ?>
+          {  
+             "label": "<?php echo $row[0]; ?>",
+             "value": "<?php echo $row[1]; ?>",
+             "color": "<?php echo $color_array[$color]; ?>"
+          },
+                <?php    
+  };
+$color=$color++;
+$current_row_num=$current_row_num+1;
+};   
+    //end SH by gender
+    //begin SH by age
+    } elseif($demo=="age") {
+        $a = 17;
+        //loop through all possible ages to create multiple data points
+        while($a++) {
+            $result=mysqli_query($link, "SELECT Q5, COUNT(Q22) FROM KnowHarassment_Results WHERE Q22='yes' AND Q5=$a") or die (mysql_error());
+            $total_num_rows=mysqli_num_rows($result);
+            $current_row_num=1;
+            while($row = mysqli_fetch_array($result)) {
+                //skipping empty values
+                if($row[1]==0){
+                    break;
+                } else {
+                    if ($current_row_num==$total_num_rows){ ?> 
+                        {
+                            "label": "<?php echo $row[0]; ?>",
+                            "value": "<?php echo $row[1]; ?>",
+                            "color": "#000066"
+                        },
+                    <?php
+                        } else { ?>
+                        {  
+                        "label": "<?php echo $row[0]; ?>",
+                        "value": "<?php echo $row[1]; ?>",
+                        "color": "#000066"
+                        },
+                    <?php
+                        };
+                };
+                    
+                $current_row_num=$current_row_num+1;
+            };
+        if($a==80){
+            break;
+        };
+        }; //ending age while loop
+        }; //end SH by age chart
+    
+    };
+// End of Sexual Harassment Charts
+
+    ?>
+    ]
+        },
+  });
+revenueChart.render("chart-container");
+}); 
+</script>
 </head>
 
   <body>
@@ -98,9 +320,6 @@ Below you can choose which harassment issue you'd like to explore. You can also 
         <form method="get" action="surveymain.php" class="form-horizontal">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <label>What Happened?</label>
-                
-                <input type="radio" name="para1" value="SH" checked>Sexual Harassment
-            <input type="radio" name="para1" value="SA">Sexual Assault
             <input type="radio" name="para1" value="CH">Cyberharassment
             </div>
                 <!--<select name="para1" size="1">

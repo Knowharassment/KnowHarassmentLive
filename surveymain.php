@@ -7,14 +7,14 @@
      
 //initialize graph variables from <form>
      $issue=$_GET['para1'];
-     $demo=$_GET['para2'];
+     //$demo=$_GET['para2'];
 
 // Setting Chart display parameters including Captions and labels
     if ($issue==""){
-        $issue="SH";
+        $issue="TN";
     };
-    if ($demo==""){
-        $demo="gender";
+    /*if ($demo==""){
+        $demo="something";
     };
     if($issue=="SH"){
         $caption="Cases of Sexual Harassment";
@@ -46,8 +46,42 @@
             $subcaption="by age";
             $x_label="Age of Respondents";
         };
-    };
+    };*/
+        if($issue=="TN"){
+            $caption="Total Number of Responses";
+            $subcaption="By Total Count";
+            $y_label="Total Responses";
+            $x_label="Total Responses";
+        }elseif($issue=="TG"){
+            $caption="Total Number of Responses";
+            $subcaption="By Gender";
+            $y_label="Total Responses";
+            $x_label="Gender";
+        }elseif($issue=="TA"){
+            $caption="Total Number of Responses";
+            $subcaption="By Age";
+            $y_label="Total Responses";
+            $x_label="Age";
+        }elseif($issue=="TSY"){
+            $caption="Total Number of Responses";
+            $subcaption="By Academic Level";
+            $y_label="Total Responses";
+            $x_label="Academic Level";
+        }elseif($issue=="TE"){
+            $caption="Total Number of Responses";
+            $subcaption="By Ethnicity";
+            $y_label="Total Responses";
+            $x_label="Ethnicity";
+        }elseif($issue==    "TSO"){
+            $caption="Total Number of Responses";
+            $subcaption="By Sexual Orientation";
+            $y_label="Total Responses";
+            $x_label="Sexual Orientation";
+        };
+    
 //End chart labeling
+        // academic year array
+    $academic = array("Freshman","Sophomore","Junior","Senior");
 ?>
 
 <html lang="en">
@@ -101,13 +135,13 @@ FusionCharts.ready(function(){
 <?php
 // Begin Chart selection logic
 // Sexual Harassment Charts
+$color=0;
     if($issue=="SH"){ 
         //By Gender
         if($demo=="gender"){
             $result=mysqli_query($link, "SELECT Q4, COUNT(Q16) FROM KnowHarassment_Results WHERE Q16='yes' AND Q4='male'") or die (mysql_error());
             $total_num_rows=mysqli_num_rows($result);
             $current_row_num=1;
-            $color=0;
             while($row = mysqli_fetch_array($result)) {
                 
             if($current_row_num==$total_num_rows){
@@ -115,7 +149,7 @@ FusionCharts.ready(function(){
                 {
                     "label": "<?php echo $row[0]; ?>",
                     "value": "<?php echo $row[1]; ?>",
-                    "color": "<?php echo $color_array[$color]; ?>"
+                    "color": "<?php echo $color_array[2]; ?>"
                 },
     <?php 
  } else {
@@ -123,7 +157,7 @@ FusionCharts.ready(function(){
           {  
              "label": "<?php echo $row[0]; ?>",
              "value": "<?php echo $row[1]; ?>",
-             "color": "<?php echo $color_array[$color]; ?>"
+             "color": "<?php echo $color_array[2]; ?>"
           },
                 <?php    
   };
@@ -133,23 +167,24 @@ $current_row_num=$current_row_num+1;
             $result=mysqli_query($link, "SELECT Q4, COUNT(Q16) FROM KnowHarassment_Results WHERE Q16='yes' AND Q4='female'") or die (mysql_error());
             $total_num_rows=mysqli_num_rows($result);
             $current_row_num=1;
-            $color=0;
             while($row = mysqli_fetch_array($result)) {
                 
             if($current_row_num==$total_num_rows){
+                $color=$color++;
 ?> 
                 {
                     "label": "<?php echo $row[0]; ?>",
                     "value": "<?php echo $row[1]; ?>",
-                    "color": "<?php echo $color_array[$color]; ?>"
+                    "color": "<?php echo $color_array[3]; ?>"
                 },
     <?php 
  } else {
+                $color=$color++;
     ?>
           {  
              "label": "<?php echo $row[0]; ?>",
              "value": "<?php echo $row[1]; ?>",
-             "color": "<?php echo $color_array[$color]; ?>"
+             "color": "<?php echo $color_array[3]; ?>"
           },
                 <?php    
   };
@@ -160,12 +195,12 @@ $current_row_num=$current_row_num+1;
     //begin SH by age
     } elseif($demo=="age") {
         $a = 17;
+        $color=0;
         //loop through all possible ages to create multiple data points
         while($a++) {
             $result=mysqli_query($link, "SELECT Q5, COUNT(Q16) FROM KnowHarassment_Results WHERE Q16='yes' AND Q5=$a") or die (mysql_error());
             $total_num_rows=mysqli_num_rows($result);
             $current_row_num=1;
-            $color=0;
             while($row = mysqli_fetch_array($result)) {
                 //skipping empty values
                 if($row[1]==0){
@@ -189,11 +224,15 @@ $current_row_num=$current_row_num+1;
                 };
                     
                 $current_row_num=$current_row_num+1;
-$color=$color++;
             };
+            
         if($a==80){
             break;
         };
+            $color=$color++;
+            if($color>6){
+                $color=0;
+            };
         }; //ending age while loop
         }; //end SH by age chart
     
@@ -395,334 +434,483 @@ $current_row_num=$current_row_num+1;
     };
 // End of Sexual Harassment Charts
 
-?>
- ]
-      }
- 
+//begin Demographic Charts
+//Total Responses
+if($issue=="TN"){
+            $result=mysqli_query($link, "SELECT Q3, COUNT(Q3) FROM KnowHarassment_Results") or die (mysql_error());
+            $total_num_rows=mysqli_num_rows($result);
+            $current_row_num=1;
+            while($row = mysqli_fetch_array($result)) {
+                
+            if($current_row_num==$total_num_rows){
+?> 
+                {
+                    "label": "<?php echo $row[0]; ?>",
+                    "value": "<?php echo $row[1]; ?>",
+                    "color": "<?php echo $color_array[2]; ?>"
+                },
+    <?php 
+ } else {
+    ?>
+          {  
+             "label": "<?php echo $row[0]; ?>",
+             "value": "<?php echo $row[1]; ?>",
+             "color": "<?php echo $color_array[2]; ?>"
+          },
+                <?php    
+  };
+$color=$color++;
+$current_row_num=$current_row_num+1;
+};  
+
+    //End Total Responses
+    //begin total responses by gender
+}elseif($issue=="TG"){
+            $result=mysqli_query($link, "SELECT Q4, COUNT(Q4) FROM KnowHarassment_Results WHERE Q4='male'") or die (mysql_error());
+            $total_num_rows=mysqli_num_rows($result);
+            $current_row_num=1;
+            while($row = mysqli_fetch_array($result)) {
+                
+            if($current_row_num==$total_num_rows){
+?> 
+                {
+                    "label": "<?php echo $row[0]; ?>",
+                    "value": "<?php echo $row[1]; ?>",
+                    "color": "<?php echo $color_array[2]; ?>"
+                },
+    <?php 
+ } else {
+    ?>
+          {  
+             "label": "<?php echo $row[0]; ?>",
+             "value": "<?php echo $row[1]; ?>",
+             "color": "<?php echo $color_array[2]; ?>"
+          },
+                <?php    
+  };
+$color=$color++;
+$current_row_num=$current_row_num+1;
+};
+            $result=mysqli_query($link, "SELECT Q4, COUNT(Q4) FROM KnowHarassment_Results WHERE Q4='female'") or die (mysql_error());
+            $total_num_rows=mysqli_num_rows($result);
+            $current_row_num=1;
+            while($row = mysqli_fetch_array($result)) {
+                
+            if($current_row_num==$total_num_rows){
+                $color=$color++;
+?> 
+                {
+                    "label": "<?php echo $row[0]; ?>",
+                    "value": "<?php echo $row[1]; ?>",
+                    "color": "<?php echo $color_array[3]; ?>"
+                },
+    <?php 
+ } else {
+                $color=$color++;
+    ?>
+          {  
+             "label": "<?php echo $row[0]; ?>",
+             "value": "<?php echo $row[1]; ?>",
+             "color": "<?php echo $color_array[3]; ?>"
+          },
+                <?php    
+  };
+$color=$color++;
+$current_row_num=$current_row_num+1;
+};   
+    //end SH by gender
+    //begin SH by age
+} elseif($issue=="TA") {
+        $a = 17;
+        $color=0;
+        //loop through all possible ages to create multiple data points
+        while($a++) {
+            $result=mysqli_query($link, "SELECT Q5, COUNT(Q5) FROM KnowHarassment_Results WHERE Q5=$a") or die (mysql_error());
+            $total_num_rows=mysqli_num_rows($result);
+            $current_row_num=1;
+            while($row = mysqli_fetch_array($result)) {
+                //skipping empty values
+                if($row[1]==0){
+                    break;
+                } else {
+                    if ($current_row_num==$total_num_rows){ ?> 
+                        {
+                            "label": "<?php echo $row[0]; ?>",
+                            "value": "<?php echo $row[1]; ?>",
+                            "color": "<?php echo $color_array[$color]; ?>"
+                        },
+                    <?php
+                        } else { ?>
+                        {  
+                        "label": "<?php echo $row[0]; ?>",
+                        "value": "<?php echo $row[1]; ?>",
+                        "color": "<?php echo $color_array[$color]; ?>"
+                        },
+                    <?php
+                        };
+                };
+                    
+                $current_row_num=$current_row_num+1;
+            };
+            
+        if($a==80){
+            break;
+        };
+            $color=$color++;
+            //if($color>6){
+            //    $color=0;
+            //};
+        }; //ending age while loop
+        }elseif($issue=="TSY"){
+            $result=mysqli_query($link, "SELECT Q6, COUNT(Q6) FROM KnowHarassment_Results WHERE Q6='Freshman'") or die (mysql_error());
+            $total_num_rows=mysqli_num_rows($result);
+            $current_row_num=1;
+            while($row = mysqli_fetch_array($result)) {
+                
+            if($current_row_num==$total_num_rows){
+?> 
+                {
+                    "label": "<?php echo $row[0]; ?>",
+                    "value": "<?php echo $row[1]; ?>",
+                    "color": "<?php echo $color_array[2]; ?>"
+                },
+    <?php 
+ } else {
+    ?>
+          {  
+             "label": "<?php echo $row[0]; ?>",
+             "value": "<?php echo $row[1]; ?>",
+             "color": "<?php echo $color_array[2]; ?>"
+          },
+                <?php    
+  };
+$color=$color++;
+$current_row_num=$current_row_num+1;
+};
+            $result=mysqli_query($link, "SELECT Q6, COUNT(Q6) FROM KnowHarassment_Results WHERE Q6='Sophomore'") or die (mysql_error());
+            $total_num_rows=mysqli_num_rows($result);
+            $current_row_num=1;
+            while($row = mysqli_fetch_array($result)) {
+                
+            if($current_row_num==$total_num_rows){
+                $color=$color++;
+?> 
+                {
+                    "label": "<?php echo $row[0]; ?>",
+                    "value": "<?php echo $row[1]; ?>",
+                    "color": "<?php echo $color_array[3]; ?>"
+                },
+    <?php 
+ } else {
+                $color=$color++;
+    ?>
+          {  
+             "label": "<?php echo $row[0]; ?>",
+             "value": "<?php echo $row[1]; ?>",
+             "color": "<?php echo $color_array[3]; ?>"
+          },
+                <?php    
+  };
+$color=$color++;
+$current_row_num=$current_row_num+1;
+};
+   $result=mysqli_query($link, "SELECT Q6, COUNT(Q6) FROM KnowHarassment_Results WHERE Q6='Junior'") or die (mysql_error());
+            $total_num_rows=mysqli_num_rows($result);
+            $current_row_num=1;
+            while($row = mysqli_fetch_array($result)) {
+                
+            if($current_row_num==$total_num_rows){
+?> 
+                {
+                    "label": "<?php echo $row[0]; ?>",
+                    "value": "<?php echo $row[1]; ?>",
+                    "color": "<?php echo $color_array[2]; ?>"
+                },
+    <?php 
+ } else {
+    ?>
+          {  
+             "label": "<?php echo $row[0]; ?>",
+             "value": "<?php echo $row[1]; ?>",
+             "color": "<?php echo $color_array[2]; ?>"
+          },
+                <?php    
+  };
+$color=$color++;
+$current_row_num=$current_row_num+1;
+};
+            $result=mysqli_query($link, "SELECT Q6, COUNT(Q6) FROM KnowHarassment_Results WHERE Q6='Senior'") or die (mysql_error());
+            $total_num_rows=mysqli_num_rows($result);
+            $current_row_num=1;
+            while($row = mysqli_fetch_array($result)) {
+                
+            if($current_row_num==$total_num_rows){
+                $color=$color++;
+?> 
+                {
+                    "label": "<?php echo $row[0]; ?>",
+                    "value": "<?php echo $row[1]; ?>",
+                    "color": "<?php echo $color_array[3]; ?>"
+                },
+    <?php 
+ } else {
+                $color=$color++;
+    ?>
+          {  
+             "label": "<?php echo $row[0]; ?>",
+             "value": "<?php echo $row[1]; ?>",
+             "color": "<?php echo $color_array[3]; ?>"
+          },
+                <?php    
+  };
+$color=$color++;
+$current_row_num=$current_row_num+1;
+}; 
+  //Total by Ethnicity  
+}elseif($issue=="TE"){
+            $result=mysqli_query($link, "SELECT Q7, COUNT(Q7) FROM KnowHarassment_Results WHERE Q7='Hispanic or Latino'") or die (mysql_error());
+            $total_num_rows=mysqli_num_rows($result);
+            $current_row_num=1;
+            while($row = mysqli_fetch_array($result)) {
+                
+            if($current_row_num==$total_num_rows){
+?> 
+                {
+                    "label": "<?php echo $row[0]; ?>",
+                    "value": "<?php echo $row[1]; ?>",
+                    "color": "<?php echo $color_array[2]; ?>"
+                },
+    <?php 
+ } else {
+    ?>
+          {  
+             "label": "<?php echo $row[0]; ?>",
+             "value": "<?php echo $row[1]; ?>",
+             "color": "<?php echo $color_array[2]; ?>"
+          },
+                <?php    
+  };
+$color=$color++;
+$current_row_num=$current_row_num+1;
+};
+            $result=mysqli_query($link, "SELECT Q7, COUNT(Q7) FROM KnowHarassment_Results WHERE Q7='White'") or die (mysql_error());
+            $total_num_rows=mysqli_num_rows($result);
+            $current_row_num=1;
+            while($row = mysqli_fetch_array($result)) {
+                
+            if($current_row_num==$total_num_rows){
+                $color=$color++;
+?> 
+                {
+                    "label": "<?php echo $row[0]; ?>",
+                    "value": "<?php echo $row[1]; ?>",
+                    "color": "<?php echo $color_array[3]; ?>"
+                },
+    <?php 
+ } else {
+                $color=$color++;
+    ?>
+          {  
+             "label": "<?php echo $row[0]; ?>",
+             "value": "<?php echo $row[1]; ?>",
+             "color": "<?php echo $color_array[3]; ?>"
+          },
+                <?php    
+  };
+$color=$color++;
+$current_row_num=$current_row_num+1;
+};
+   $result=mysqli_query($link, "SELECT Q7, COUNT(Q7) FROM KnowHarassment_Results WHERE Q7='Black or African American'") or die (mysql_error());
+            $total_num_rows=mysqli_num_rows($result);
+            $current_row_num=1;
+            while($row = mysqli_fetch_array($result)) {
+                
+            if($current_row_num==$total_num_rows){
+?> 
+                {
+                    "label": "<?php echo $row[0]; ?>",
+                    "value": "<?php echo $row[1]; ?>",
+                    "color": "<?php echo $color_array[2]; ?>"
+                },
+    <?php 
+ } else {
+    ?>
+          {  
+             "label": "<?php echo $row[0]; ?>",
+             "value": "<?php echo $row[1]; ?>",
+             "color": "<?php echo $color_array[2]; ?>"
+          },
+                <?php    
+  };
+$color=$color++;
+$current_row_num=$current_row_num+1;
+};
+            $result=mysqli_query($link, "SELECT Q7, COUNT(Q7) FROM KnowHarassment_Results WHERE Q7='Native Hawaiian or Other Pacific Islander'") or die (mysql_error());
+            $total_num_rows=mysqli_num_rows($result);
+            $current_row_num=1;
+            while($row = mysqli_fetch_array($result)) {
+                
+            if($current_row_num==$total_num_rows){
+                $color=$color++;
+?> 
+                {
+                    "label": "<?php echo $row[0]; ?>",
+                    "value": "<?php echo $row[1]; ?>",
+                    "color": "<?php echo $color_array[3]; ?>"
+                },
+    <?php 
+ } else {
+                $color=$color++;
+    ?>
+          {  
+             "label": "<?php echo $row[0]; ?>",
+             "value": "<?php echo $row[1]; ?>",
+             "color": "<?php echo $color_array[3]; ?>"
+          },
+                <?php    
+  };
+$color=$color++;
+$current_row_num=$current_row_num+1;
+}; 
+ $result=mysqli_query($link, "SELECT Q7, COUNT(Q7) FROM KnowHarassment_Results WHERE Q7='Prefer not to answer'") or die (mysql_error());
+            $total_num_rows=mysqli_num_rows($result);
+            $current_row_num=1;
+            while($row = mysqli_fetch_array($result)) {
+                
+            if($current_row_num==$total_num_rows){
+                $color=$color++;
+?> 
+                {
+                    "label": "<?php echo $row[0]; ?>",
+                    "value": "<?php echo $row[1]; ?>",
+                    "color": "<?php echo $color_array[3]; ?>"
+                },
+    <?php 
+ } else {
+                $color=$color++;
+    ?>
+          {  
+             "label": "<?php echo $row[0]; ?>",
+             "value": "<?php echo $row[1]; ?>",
+             "color": "<?php echo $color_array[3]; ?>"
+          },
+                <?php    
+  };
+$color=$color++;
+$current_row_num=$current_row_num+1;
+};   
+}elseif($issue=="TSO"){
+            $result=mysqli_query($link, "SELECT Q9, COUNT(Q9) FROM KnowHarassment_Results WHERE Q9='Heterosexual'") or die (mysql_error());
+            $total_num_rows=mysqli_num_rows($result);
+            $current_row_num=1;
+            while($row = mysqli_fetch_array($result)) {
+                
+            if($current_row_num==$total_num_rows){
+?> 
+                {
+                    "label": "<?php echo $row[0]; ?>",
+                    "value": "<?php echo $row[1]; ?>",
+                    "color": "<?php echo $color_array[2]; ?>"
+                },
+    <?php 
+ } else {
+    ?>
+          {  
+             "label": "<?php echo $row[0]; ?>",
+             "value": "<?php echo $row[1]; ?>",
+             "color": "<?php echo $color_array[2]; ?>"
+          },
+                <?php    
+  };
+$color=$color++;
+$current_row_num=$current_row_num+1;
+};
+            $result=mysqli_query($link, "SELECT Q9, COUNT(Q9) FROM KnowHarassment_Results WHERE Q9='Homosexual'") or die (mysql_error());
+            $total_num_rows=mysqli_num_rows($result);
+            $current_row_num=1;
+            while($row = mysqli_fetch_array($result)) {
+                
+            if($current_row_num==$total_num_rows){
+                $color=$color++;
+?> 
+                {
+                    "label": "<?php echo $row[0]; ?>",
+                    "value": "<?php echo $row[1]; ?>",
+                    "color": "<?php echo $color_array[3]; ?>"
+                },
+    <?php 
+ } else {
+                $color=$color++;
+    ?>
+          {  
+             "label": "<?php echo $row[0]; ?>",
+             "value": "<?php echo $row[1]; ?>",
+             "color": "<?php echo $color_array[3]; ?>"
+          },
+                <?php    
+  };
+$color=$color++;
+$current_row_num=$current_row_num+1;
+};
+   $result=mysqli_query($link, "SELECT Q9, COUNT(Q9) FROM KnowHarassment_Results WHERE Q9='Bisexual'") or die (mysql_error());
+            $total_num_rows=mysqli_num_rows($result);
+            $current_row_num=1;
+            while($row = mysqli_fetch_array($result)) {
+                
+            if($current_row_num==$total_num_rows){
+?> 
+                {
+                    "label": "<?php echo $row[0]; ?>",
+                    "value": "<?php echo $row[1]; ?>",
+                    "color": "<?php echo $color_array[2]; ?>"
+                },
+    <?php 
+ } else {
+    ?>
+          {  
+             "label": "<?php echo $row[0]; ?>",
+             "value": "<?php echo $row[1]; ?>",
+             "color": "<?php echo $color_array[2]; ?>"
+          },
+                <?php    
+  };
+$color=$color++;
+$current_row_num=$current_row_num+1;
+};
+            $result=mysqli_query($link, "SELECT Q9, COUNT(Q9) FROM KnowHarassment_Results WHERE Q9='Prefer not to answer'") or die (mysql_error());
+            $total_num_rows=mysqli_num_rows($result);
+            $current_row_num=1;
+            while($row = mysqli_fetch_array($result)) {
+                
+            if($current_row_num==$total_num_rows){
+                $color=$color++;
+?> 
+                {
+                    "label": "<?php echo $row[0]; ?>",
+                    "value": "<?php echo $row[1]; ?>",
+                    "color": "<?php echo $color_array[3]; ?>"
+                },
+    <?php 
+ } else {
+                $color=$color++;
+    ?>
+          {  
+             "label": "<?php echo $row[0]; ?>",
+             "value": "<?php echo $row[1]; ?>",
+             "color": "<?php echo $color_array[3]; ?>"
+          },
+                <?php    
+  };
+$color=$color++;
+$current_row_num=$current_row_num+1;
+}; };
+
+    ?>
+    ]
+        },
   });
 revenueChart.render("chart-container");
 }); 
-
-FusionCharts.ready(function () {
-    var ageGroupChart = new FusionCharts({
-        type: 'pie2d',
-        renderAt: 'piechart-container',
-        width: '100%',
-        height: '300px',
-        dataFormat: 'json',
-        dataSource: {
-            "chart": {
-                "caption": "<?php echo $caption;?>",
-                "subCaption": "<?php echo $subcaption;?>",
-                
-                "enableSmartLabels": "0",
-                "showPercentValues": "1",
-                "showTooltip": "0",
-                "decimals": "1",
-                "theme": "fint"
-            },
-            "data": [
-<?php
-// Begin Chart selection logic
-// Sexual Harassment Charts
-    if($issue=="SH"){ 
-        //By Gender
-        if($demo=="gender"){
-            $result=mysqli_query($link, "SELECT Q4, COUNT(Q16) FROM KnowHarassment_Results WHERE Q16='yes' AND Q4='male'") or die (mysql_error());
-            $total_num_rows=mysqli_num_rows($result);
-            $current_row_num=1;
-            $color=0;
-            while($row = mysqli_fetch_array($result)) {
-                
-            if($current_row_num==$total_num_rows){
-?> 
-                {
-                    "label": "<?php echo $row[0]; ?>",
-                    "value": "<?php echo $row[1]; ?>",
-                    "color": "<?php echo $color_array[$color]; ?>"
-                },
-    <?php 
- } else {
-    ?>
-          {  
-             "label": "<?php echo $row[0]; ?>",
-             "value": "<?php echo $row[1]; ?>",
-             "color": "<?php echo $color_array[$color]; ?>"
-          },
-                <?php    
-  };
-$color=$color++;
-$current_row_num=$current_row_num+1;
-};
-            $result=mysqli_query($link, "SELECT Q4, COUNT(Q16) FROM KnowHarassment_Results WHERE Q16='yes' AND Q4='female'") or die (mysql_error());
-            $total_num_rows=mysqli_num_rows($result);
-            $current_row_num=1;
-            while($row = mysqli_fetch_array($result)) {
-            if($current_row_num==$total_num_rows){
-?> 
-                {
-                    "label": "<?php echo $row[0]; ?>",
-                    "value": "<?php echo $row[1]; ?>",
-                    "color": "#000066"
-                },
-    <?php 
- } else {
-    ?>
-          {  
-             "label": "<?php echo $row[0]; ?>",
-             "value": "<?php echo $row[1]; ?>",
-             "color": "#000066"
-          },
-                <?php    
-  };
-$current_row_num=$current_row_num+1;
-};   
-    //end SH by gender
-    //begin SH by age
-    } elseif($demo=="age") {
-        $a = 17;
-        //loop through all possible ages to create multiple data points
-        while($a++) {
-            $result=mysqli_query($link, "SELECT Q5, COUNT(Q16) FROM KnowHarassment_Results WHERE Q16='yes' AND Q5=$a") or die (mysql_error());
-            $total_num_rows=mysqli_num_rows($result);
-            $current_row_num=1;
-            while($row = mysqli_fetch_array($result)) {
-                //skipping empty values
-                if($row[1]==0){
-                    break;
-                } else {
-                    if ($current_row_num==$total_num_rows){ ?> 
-                        {
-                            "label": "<?php echo $row[0]; ?>",
-                            "value": "<?php echo $row[1]; ?>",
-                            "color": "#000066"
-                        },
-                    <?php
-                        } else { ?>
-                        {  
-                        "label": "<?php echo $row[0]; ?>",
-                        "value": "<?php echo $row[1]; ?>",
-                        "color": "#000066"
-                        },
-                    <?php
-                        };
-                };
-                    
-                $current_row_num=$current_row_num+1;
-            };
-        if($a==80){
-            break;
-        };
-        }; //ending age while loop
-        }; //end SH by age chart
-    
-    };
-// End of Sexual Harassment Charts
-// Sexual Assault Charts
-    if($issue=="SA"){ 
-        //By Gender
-        if($demo=="gender"){
-            $result=mysqli_query($link, "SELECT Q4, COUNT(Q10) FROM KnowHarassment_Results WHERE Q10='yes' AND Q4='male'") or die (mysql_error());
-            $total_num_rows=mysqli_num_rows($result);
-            $current_row_num=1;
-            while($row = mysqli_fetch_array($result)) {
-            if($current_row_num==$total_num_rows){
-?> 
-                {
-                    "label": "<?php echo $row[0]; ?>",
-                    "value": "<?php echo $row[1]; ?>",
-                    "color": "#000066"
-                },
-    <?php 
- } else {
-    ?>
-          {  
-             "label": "<?php echo $row[0]; ?>",
-             "value": "<?php echo $row[1]; ?>",
-             "color": "#000066"
-          },
-                <?php    
-  };
-$current_row_num=$current_row_num+1;
-};
-            $result=mysqli_query($link, "SELECT Q4, COUNT(Q10) FROM KnowHarassment_Results WHERE Q10='yes' AND Q4='female'") or die (mysql_error());
-            $total_num_rows=mysqli_num_rows($result);
-            $current_row_num=1;
-            while($row = mysqli_fetch_array($result)) {
-            if($current_row_num==$total_num_rows){
-?> 
-                {
-                    "label": "<?php echo $row[0]; ?>",
-                    "value": "<?php echo $row[1]; ?>",
-                    "color": "#000066"
-                },
-    <?php 
- } else {
-    ?>
-          {  
-             "label": "<?php echo $row[0]; ?>",
-             "value": "<?php echo $row[1]; ?>",
-             "color": "#000066"
-          },
-                <?php    
-  };
-$current_row_num=$current_row_num+1;
-};   
-    //end SA by gender
-    //begin SA by age
-    } elseif($demo=="age") {
-        $a = 17;
-        //loop through all possible ages to create multiple data points
-        while($a++) {
-            $result=mysqli_query($link, "SELECT Q5, COUNT(Q10) FROM KnowHarassment_Results WHERE Q10='yes' AND Q5=$a") or die (mysql_error());
-            $total_num_rows=mysqli_num_rows($result);
-            $current_row_num=1;
-            while($row = mysqli_fetch_array($result)) {
-                //skipping empty values
-                if($row[1]==0){
-                    break;
-                } else {
-                    if ($current_row_num==$total_num_rows){ ?> 
-                        {
-                            "label": "<?php echo $row[0]; ?> yrs old",
-                            "value": "<?php echo $row[1]; ?>",
-                            "color": "#000066"
-                        },
-                    <?php
-                        } else { ?>
-                        {  
-                        "label": "<?php echo $row[0]; ?> yrs old",
-                        "value": "<?php echo $row[1]; ?>",
-                        "color": "#000066"
-                        },
-                    <?php
-                        };
-                };
-                    
-                $current_row_num=$current_row_num+1;
-            };
-        if($a==80){
-            break;
-        };
-        }; //ending age while loop
-        }; //end SH by age chart
-    
-    };
-// End of Sexual Assault Charts
-
-// Cyber Harassment Charts
-    if($issue=="CH"){ 
-        //By Gender
-        if($demo=="gender"){
-            $result=mysqli_query($link, "SELECT Q4, COUNT(Q22) FROM KnowHarassment_Results WHERE Q22='yes' AND Q4='male'") or die (mysql_error());
-            $total_num_rows=mysqli_num_rows($result);
-            $current_row_num=1;
-            while($row = mysqli_fetch_array($result)) {
-            if($current_row_num==$total_num_rows){
-?> 
-                {
-                    "label": "<?php echo $row[0]; ?>",
-                    "value": "<?php echo $row[1]; ?>",
-                    "color": "#000066"
-                },
-    <?php 
- } else {
-    ?>
-          {  
-             "label": "<?php echo $row[0]; ?>",
-             "value": "<?php echo $row[1]; ?>",
-             "color": "#000066"
-          },
-                <?php    
-  };
-$current_row_num=$current_row_num+1;
-};
-            $result=mysqli_query($link, "SELECT Q4, COUNT(Q22) FROM KnowHarassment_Results WHERE Q22='yes' AND Q4='female'") or die (mysql_error());
-            $total_num_rows=mysqli_num_rows($result);
-            $current_row_num=1;
-            while($row = mysqli_fetch_array($result)) {
-            if($current_row_num==$total_num_rows){
-?> 
-                {
-                    "label": "<?php echo $row[0]; ?>",
-                    "value": "<?php echo $row[1]; ?>",
-                    "color": "#000066"
-                },
-    <?php 
- } else {
-    ?>
-          {  
-             "label": "<?php echo $row[0]; ?>",
-             "value": "<?php echo $row[1]; ?>",
-             "color": "#000066"
-          },
-                <?php    
-  };
-$current_row_num=$current_row_num+1;
-};   
-    //end SH by gender
-    //begin SH by age
-    } elseif($demo=="age") {
-        $a = 17;
-        //loop through all possible ages to create multiple data points
-        while($a++) {
-            $result=mysqli_query($link, "SELECT Q5, COUNT(Q22) FROM KnowHarassment_Results WHERE Q22='yes' AND Q5=$a") or die (mysql_error());
-            $total_num_rows=mysqli_num_rows($result);
-            $current_row_num=1;
-            while($row = mysqli_fetch_array($result)) {
-                //skipping empty values
-                if($row[1]==0){
-                    break;
-                } else {
-                    if ($current_row_num==$total_num_rows){ ?> 
-                        {
-                            "label": "<?php echo $row[0]; ?> yrs old",
-                            "value": "<?php echo $row[1]; ?>",
-                            "color": "#000066"
-                        },
-                    <?php
-                        } else { ?>
-                        {  
-                        "label": "<?php echo $row[0]; ?> yrs old"",
-                        "value": "<?php echo $row[1]; ?>",
-                        "color": "#000066"
-                        },
-                    <?php
-                        };
-                };
-                    
-                $current_row_num=$current_row_num+1;
-            };
-        if($a==80){
-            break;
-        };
-        }; //ending age while loop
-        }; //end SH by age chart
-    
-    };
-// End of Sexual Harassment Charts
-
-?>
- ]
-        },
-        "events": {
-            "dataplotrollover": function (evt, data) {
-                var txt = "Age group : " + data.categoryLabel + ",<br/>No. of responses : " + data.value;
-               document.getElementById('indicatorDiv').innerHTML = txt;
-            },
-            "dataplotrollout": function (evt, data) {
-                document.getElementById('indicatorDiv').innerHTML = 
-                    "Hover on any of the pie slice to view details.";
-            },
-           
-            
-        }
-    });
-
-    ageGroupChart.render();
-    
-});
-
 </script>
 
 
@@ -790,23 +978,63 @@ $current_row_num=$current_row_num+1;
             <p>We wanted to learn as much as possible about harassment issues here at Kent State. In October we distrubited a survey in an attempt to get answers straight from the student body. The responses that we've recieved have vindicated our mission. Below, you'll have a chance to see the responses in many ways.
                 <br><br><br><div id="subhead">The Survey Overview</div><br>
 <strong>
-Below you can see who responded to our survey. 
+Below you can see who responded to our survey. Choose how you'd like to see our respondents catergorized. 
 </strong>
 </p>
             </div></div>
+      <div class="row chartcontrol">
+                <fieldset>
+                    <legend>Chart Control:</legend>
+        <form method="get" action="surveymain.php" class="form-horizontal">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <label>Choose an option to see our survey's demographic breakdown</label>
+                <br><br>
+            <input type="radio" name="para1" value="TN" checked>Total Number</input>
+            <input type="radio" name="para1" value="TG">By Sex</input>
+            <input type="radio" name="para1" value="TA">By Age</input>
+            <input type="radio" name="para1" value="TSY">By Academic Level</input>
+            <input type="radio" name="para1" value="TE">By Ethnicity</input>
+            <input type="radio" name="para1" value="TSO">By Sexual Orientation</input>
+            </div>
+                <!--<select name="para1" size="1">
+                    <option selected value="">please choose...</option>
+                    <option value="SH">Sexual Harassment</option>
+                    <option value="SA">Sexual Assault</option>
+                    <option value="CH">Cyber-harassment</option>
+                </select>-->
+            <!--<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <label>Break it down by:</label>
+                <br>
+                <input type="radio" name="para2" value="gender" checked> Gender<br>
+            <input type="radio" name="para2" value="age"> Age<br>
+            </div>-->
+                
+                <!--<select name="para2" size="1">
+                    <option selected value=""> please choose...</option>
+                    <option value="gender">Gender</option>
+                    <option value="age">Age</option>
+            
+            </select>-->
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <input type="submit" value="submit" style="margin: 1em auto 1em auto; align: center;">
+            </div>
+        </form>
+                    </fieldset>
+                    </div>
             <div class="row" style="max-height: 30em;">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="chart-container" id="chart-container">
                       Please excuse our dust
                       </div></div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                
+                <!--<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="chart-container" id="piechart-container">
                     expect the pie chart
                 </div></div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="indicatorDiv" id="indicatorDiv">   
                 Hover over pieces of the pie for more information.
-                </div></div>
+                </div></div>-->
             </div>
       </div><!-- pagecontainer -->
       <hr>
