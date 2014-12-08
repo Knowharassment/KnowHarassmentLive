@@ -6478,7 +6478,8 @@ h4{
     font-family: "helvetica neue";
     font-weight:100;
     letter-spacing:3px;
-    text-align: left;
+    text-align: right;
+    margin-left:17em;
 }
 
 #footer{
@@ -6764,10 +6765,9 @@ h4{
     font-weight:500;
     letter-spacing:2px;
     text-align: left;   
-    font-size:55px;
+    font-size:40px;
     line-height: 180%;
     padding-bottom: 1em;
-    padding-top:0;
     color:white;
     text-shadow: 1px;
 }
@@ -6791,7 +6791,6 @@ h4{
     letter-spacing:.1em;
     text-align: left; 
     font-size:28px;
-    padding-bottom:0;
     padding-top:1.5em;
     color:white;
 
@@ -6848,7 +6847,7 @@ h4{
   background-size: cover;
 	Text-align: Left;
 	<!--background-color: RGB(235,137,69);-->
-    padding-top:3em;
+   padding-top:3em;
     padding-left:5em;
     padding-bottom:3em;
     padding-right:2em;
@@ -6903,4 +6902,16 @@ h4{
 
 #aboutheadshots {
     text-align:center;
+}
+
+#knowharassmenttext {
+    position: relative;
+    color:white;
+    line-height: 200%;
+    font-size: 16px;
+    font-family: "helvetica neue";
+    font-weight:100;
+    letter-spacing:3px;
+    text-align: left;
+    margin-left:17em;
 }
