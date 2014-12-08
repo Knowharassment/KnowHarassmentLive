@@ -6724,12 +6724,12 @@ h4{
 
 #sidebartext {
     position: relative;
-    font-size: 11px;
+    font-size: 12px;
     font-family: "helvetica neue";
     padding: 0 1em 0 1em;
     line-height: 190%;
     letter-spacing:.2px;
-    font-weight: 200;
+    font-weight:300;
     color:rgb(42,62,64);
     text-align: left;
 }
@@ -6897,4 +6897,8 @@ h4{
   background-size: cover;
     padding:2em;
 }
+}
+
+#aboutheadshots {
+    text-align:center;
 }
