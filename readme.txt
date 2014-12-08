@@ -5,11 +5,29 @@ Authored: Blake Ianni, 11:00am am 11/5/14
 Last Modified: Blake Ianni, 11:00 am 11/5/14
 ==============================================
 
-Please review this readme file to learn about the KnowHarassment repository.
+This file contains information regarding the use of source code, best practices, terms of use, and patch information.
 
-Original Contributors: Blake Ianni, Michael Pryzarty, Brandon Gerber, Nicole Barthel
+Section One: Credits
 
-The Directory:
+The Knowharassment Team:
+
+Lead Developer = Blake Ianni
+Senior Front End Development = Michael Pryzarty
+Senior Front End Development = Brandon Gerber
+Lead Web Designer = Nicole Barthel
+Content Director = Christina Bucciere
+Senior Content Contributer = Melinda Stephan
+
+CSS Library:
+
+    Bootstrap v3.2.0 (http://getbootstrap.com)
+    Copyright 2011-2014 Twitter, Inc.
+    Licensed under MIT
+    (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+
+=====
+
+Section Two: Introduction
 
 Working with Bootstrap.css:
 
