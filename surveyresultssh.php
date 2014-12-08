@@ -1,5 +1,4 @@
 <?php
-//This page delivers information about the people who took our survey
      require('dbconnect.php');
      require('sanitize.php');
      error_reporting(-1);
@@ -9,40 +8,47 @@
      $issue=$_GET['para1'];
      $demo=$_GET['para2'];
 
-// Begin chart labels
-// Setting Caption
+// Setting Chart display parameters including Captions and labels
+    if ($issue==""){
+        $issue="SH";
+    };
+    if ($demo==""){
+        $demo="gender";
+    };
     if($issue=="SH"){
         $caption="Cases of Sexual Harassment";
+        $y_label='Amount of Sexual Harassment Reported';
         if($demo=="gender"){
             $subcaption="by gender";
+            $x_label="Gender of Respondents";
         } elseif ($demo=="age"){
             $subcaption="by age";
+            $x_label="Age of Respondents";
+        };
+    }elseif($issue=="SA"){
+        $caption="Cases of Sexual Assault";
+        $y_label='Amount of Sexual Assault Reported';
+        if($demo=="gender"){
+            $subcaption="by gender";
+            $x_label="Gender of Respondents";
+        } elseif ($demo=="age"){
+            $subcaption="by age";
+            $x_label="Age of Respondents";
+        };
+    }elseif($issue=="CH"){
+        $caption="Cases of Cyber-Harassment";
+        $y_label='Amount of cyber-harassment Reported';
+        if($demo=="gender"){
+            $subcaption="by gender";
+            $x_label="Gender of Respondents";
+        } elseif ($demo=="age"){
+            $subcaption="by age";
+            $x_label="Age of Respondents";
         };
     };
-     
-//setting y-axis
-     
-     if ($issue==""){
-        $issue="SH";
-     } elseif ($issue=="SH"){
-        $y_label='Amount of Sexual Harassment Reported';
-     } elseif ($issue=="SA"){
-        $y_label='Amount of Sexual Assault Reported';
-     } elseif ($issue=="CH"){
-        $y_label='Amount of cyber-harassment Reported';
-     };
-
-// setting x-axis
-    
-     if ($demo==""){
-        $demo="gender";
-    } elseif ($demo=="gender"){
-        $x_label="Gender of Respondents";
-     }elseif ($demo=="age"){
-        $x_label="Age of Respondents";
-     };
-//End chart labels
+//End chart labeling
 ?>
+
 
 <html lang="en">
   <head>
@@ -70,7 +76,7 @@ FusionCharts.ready(function(){
         type: "column2d",
         renderAt: "chart-container",
         width: "100%",
-        height: "100%",
+        height: "300px",
         dataFormat: "json",
         dataSource: {
             "chart": {
@@ -185,7 +191,6 @@ $current_row_num=$current_row_num+1;
     
     };
 // End of Sexual Harassment Charts
-
 ?>
  ]
       }
@@ -193,6 +198,60 @@ $current_row_num=$current_row_num+1;
   });
   revenueChart.render("chart-container");
 }); 
+
+FusionCharts.ready(function () {
+    var ageGroupChart = new FusionCharts({
+        type: 'pie2d',
+        renderAt: 'piechart-container',
+        width: '450',
+        height: '300',
+        dataFormat: 'json',
+        dataSource: {
+            "chart": {
+                "caption": "Split of visitors by age group",
+                "subCaption": "Last year",
+                "enableSmartLabels": "0",
+                "showPercentValues": "1",
+                "showTooltip": "0",
+                "decimals": "1",
+                "theme": "fint"
+            },
+            "data": [
+                {
+                    "label": "Teenage",
+                    "value": "1250400"
+                }, 
+                {
+                    "label": "Adult",
+                    "value": "1463300"
+                }, 
+                {
+                    "label": "Mid-age",
+                    "value": "1050700"
+                }, 
+                {
+                    "label": "Senior",
+                    "value": "491000"
+                }
+            ]
+        },
+        "events": {
+            "dataplotrollover": function (evt, data) {
+                var txt = "Age group : " + data.categoryLabel + ",<br/>No. of visitors : " + data.value;
+               document.getElementById('indicatorDiv').innerHTML = txt;
+            },
+            "dataplotrollout": function (evt, data) {
+                document.getElementById('indicatorDiv').innerHTML = 
+                    "Hover on any of the pie slice to view details.";
+            },
+           
+            
+        }
+    });
+
+    ageGroupChart.render();
+    
+});
 
 </script>
 
@@ -233,14 +292,21 @@ $current_row_num=$current_row_num+1;
 <!--Content Begins Here-->
             <div class="container-fluid" id="datapagecontainer">
       <div class="row">
-        <div class="col-sm-4 col-md-2 col-lg-2 col-xs-4 sidebar">
+        <div class="col-sm-4 col-md-3 col-lg-3 col-xs-4 sidebar">
           <p id="chartsidebartitle">
-              KnowHarassment's Database
-              <hr style="color: black;">
+              The<br>
+              <strong>KnowHarassment</strong><br>
+              Database
             </p>
-            <ul class="nav-sidebar">
-            <li class="active"><a href="surveymain.php" style="text-color: black;">Survey Data</a></li>
-            <li><a href="knowharassmentatksu.html" style="color: black;">Crime Data</a></li>
+            
+            <ul class="nav nav-sidebar">
+                <hr style="color: black;">
+            <li><a href="surveymain.php" style="color: black;">Survey Overview</a></li>
+                    <li><a href="surveyresultsch.php" style="color: black;">Cyber-Harassment</a></li>
+                    <li class="active"><a href="surveyresultssh.php" style="color: black;">Sexual Harassment</a></li>
+                    <li><a href="surveyresultssa.php" style="color: black;">Sexual Assault</a></li>
+                <hr>
+            <li><a href="knowharassmentatksu.html" style="color: black;">KSU Crime Data</a></li>
             </ul>
           </div>
                 <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12" style="padding: 0 0 0 3em;">
@@ -249,7 +315,7 @@ $current_row_num=$current_row_num+1;
         </div>
 
             <br>
-            <div id="subhead">The Survey Database</div>
+            <div id="subhead">Sexual Harassment</div>
                 
             <p>We wanted to learn as much as possible about harassment issues here at Kent State. In October we distrubited a survey in an attempt to get answers straight from the student body. The responses that we've recieved have vindicated our mission. Below, you'll have a chance to see the responses in many ways.
                 <br><Br>
@@ -257,35 +323,48 @@ $current_row_num=$current_row_num+1;
 Below you can choose which harassment issue you'd like to explore. You can also choose to view the data in different ways. 
 </strong>
 </p>
-            </div>
-              <div class="col-lg-10 col-md-7 col-sm-12 col-xs-12" id="chart-container">
+            </div></div>
+            <div class="row">
+            <div class="col-lg-10 col-md-7 col-sm-12 col-xs-12" id="chart-container">
                 Expect the Chart Here
-              </div>
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <div class="chartcontrol">
+              </div></div>
+            <div class="row chartcontrol">
                 <fieldset>
                     <legend>Chart Control:</legend>
         <form method="get" action="surveymain.php" class="form-horizontal">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <label>What Happened?</label>
-                <select name="para1" size="1">
+                
+                <input type="radio" name="para1" value="SH" checked>Sexual Harassment
+            <input type="radio" name="para1" value="SA">Sexual Assault
+            <input type="radio" name="para1" value="CH">Cyberharassment
+            </div>
+                <!--<select name="para1" size="1">
                     <option selected value="">please choose...</option>
                     <option value="SH">Sexual Harassment</option>
                     <option value="SA">Sexual Assault</option>
                     <option value="CH">Cyber-harassment</option>
-                </select>
-            <br>
+                </select>-->
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <label>Break it down by:</label>
-                <select name="para2" size="1">
+                <input type="radio" name="para2" value="gender" checked> Gender
+            <input type="radio" name="para2" value="age"> Age
+            </div>
+                
+                <!--<select name="para2" size="1">
                     <option selected value=""> please choose...</option>
                     <option value="gender">Gender</option>
                     <option value="age">Age</option>
             
-            </select>
-            <br>
-            <input type="submit" value="submit">
+            </select>-->
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <input type="submit" value="submit" style="margin: 0 auto 0 auto;">
+            </div>
         </form>
                     </fieldset>
-                    </div></div></div>
+                    </div>
+                </div><!-- chartcontrol -->
+            </div><!-- pagecontainer -->
       <hr>
 
          <div id="footer">
