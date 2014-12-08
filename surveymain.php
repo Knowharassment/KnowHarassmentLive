@@ -743,9 +743,9 @@ $current_row_num=$current_row_num+1;
               KnowHarassment's Database
               <hr style="color: black;">
             </p>
-            <ul class="nav-sidebar">
+            <ul class="nav nav-sidebar">
             <li class="active"><a href="surveymain.php" style="text-color: black;">Survey Data</a></li>
-                <ul class="nav-sidebar">
+                <ul class="nav nav-sidebar">
                     <li><a href="surveyresultsch.php" style="color: black;">Cyber-harassment Data</a></li>
                     <li><a href="surveyresultssh.php" style="color: black;">Sexual Harassment</a></li>
                     <li><a href="surveyresultssa.php" style="color: black;">Sexual Assault</a></li>

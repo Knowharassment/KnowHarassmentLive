@@ -70,10 +70,14 @@ body {
 
 /* Sidebar navigation */
 .nav-sidebar {
-  margin-right: -10em; /* 20px padding + 1px border */
-  margin-bottom: 20px;
-  margin-left: -20px;
+    list-style: none;
+    position: inherit;
+    display:block;
+    margin-right: -10em; /* 20px padding + 1px border */
+    margin-bottom: 20px;
+    margin-left: -20px;
     color: black;
+    
 }
 .nav-sidebar > li > a {
   padding-right: 20px;

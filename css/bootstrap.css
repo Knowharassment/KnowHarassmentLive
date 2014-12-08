@@ -3607,7 +3607,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .nav > li {
   position: relative;
-  display: inherit;
+  display: block;
 }
 .nav > li > a {
   position: relative;
@@ -6664,7 +6664,7 @@ background-color: rgb(235,137,69);
     padding: 3em 1em 1em 1em;
     height: 70%;
     width: 90%;
-    max-width: 50em;
+    max-width: 40em;
     max-height: 70em;
 }
 
@@ -6744,7 +6744,7 @@ background-color: rgb(235,137,69);
     display: block;
     margin:0 0 0 0;
     padding: 3em 1em 1em 1em;
-    max-width: 50em;
+    max-width: 40em;
     max-height: 70em;
 }
 
@@ -6755,6 +6755,6 @@ background-color: rgb(235,137,69);
     padding: 3em 1em 1em 1em;
     height: 70%;
     width: 90%;
-    max-width: 50em;
+    max-width: 40em;
     max-height: 70em;
 }
